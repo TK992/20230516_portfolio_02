@@ -1,0 +1,73 @@
+// 配色
+$cGreen: #789C87;
+$cPink: #DE6262;
+$cOrange: #FFB88C;
+$cBeige: #FFEFE0;
+$cWhite: #ffffff;
+$cBlack: #565656;
+$cGray: #484848;
+$cShadow: #b2b2b2;
+
+// ----------- 基本スタイル ----------
+html {
+  font-size: 16px;
+  font-family: 'Kiwi Maru', 'Quicksand', 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  max-width: 430px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #FFEFE0;
+  color: $cWhite;
+}
+
+
+// ----------- ローダー ----------
+#loader {
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  transition: 0.4s;
+  
+  .loading {
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+    font-size: 8px;
+    border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-left: 1.1em solid $cShadow;
+    
+    animation: load8 1.1s infinite linear;
+  }
+  @keyframes load8 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.load {
+  display: none;
+}
+
+
+// ----------- デスクトップ用デザイン -----------
+@media screen and (min-width:551px) {
+  
+  body {
+    max-width: 800px;
+  }
+  
+  h2 {
+    padding: 20% 0 10%;
+  }
+}

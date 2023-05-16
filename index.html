@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="カフェサンクチュアリの店舗紹介HP（ポートフォリオ用）">
+    <title>Cafe Sanctuary</title>
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <!-- googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;500&family=Noto+Sans+JP:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <!-- スタイルシート -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <!------------ ローダー ------------>
+    <div id=loader>
+      <div class="loading"></div>
+    </div>
+
+    <!------------ ヘッダー ------------>
+    <header class="header load">
+      <a id="link-top" href="#link-top">
+        <span class="header__shop-name">
+          Cafe
+        </span>
+        <span class="header__shop-name">
+          Sanctuary
+        </span>
+      </a>
+
+      <!-- ハンバーガーメニューボタン -->
+      <a class="header__button"><img src="img/header/button.png" alt="メニューボタン"></a>
+      
+      <!-- PC用ナビゲーション -->
+      <nav class="header__nav-pc">
+        <a class="header__nav-pc--link" href="#link-store">store</a>
+        <a class="header__nav-pc--link" href="#link-menu">menu</a>
+        <a class="header__nav-pc--link" href="#link-info">info</a>
+        <a class="header__nav-pc--link" href="#link-access">access</a>
+        <a class="header__nav-pc--link" href="#link-contact">contact</a>
+        <a class="header__nav-pc--link" href="https://www.instagram.com/cafe.sanctuary/" target="_blank"><img src="img/header/logo_insta_color.png" alt="インスタのアイコン"></a>
+      </nav>
+    </header>
+
+    <!-- スマホ用ナビゲーション -->
+    <nav class="header__nav-sp">
+      <a class="header__nav-sp--link"><img class="header__nav-sp--close" src="img/header/close.png" alt="閉じるボタン"></a>
+      <a class="header__nav-sp--link" href="#link-store">store</a>
+      <a class="header__nav-sp--link" href="#link-menu">menu</a>
+      <a class="header__nav-sp--link" href="#link-info">info</a>
+      <a class="header__nav-sp--link" href="#link-access">access</a>
+      <a class="header__nav-sp--link" href="#link-contact">contact</a>
+      <a class="header__nav-sp--link" href="https://www.instagram.com/cafe.sanctuary/" target="_blank"><img src="img/header/logo_insta_color.png" alt="インスタのアイコン"></a>
+      <div class="header__nav-sp--line"></div>
+    </nav>
+
+    <main class="load">
+      <!------------ ファーストビュー ------------>
+      <section class="fv">
+        <div class="fv__bgc">
+          <h1 class="fv__title">ブリュッセルワッフルと自家焙煎珈琲<br>カフェ・サンクチュアリ</h1>
+        </div>
+        <img class="fv__img--waffle" src="img/fv/img-berry.jpeg" alt="ベリー系のワッフル">
+        <img class="fv__img--coffee" src="img/fv/img_coffee.jpeg" alt="自家焙煎珈琲">
+      </section>
+
+      <div class="bgc">
+        <!------------ store ------------>
+        <section id="link-store" class="store appear">
+          <h2 class="store__title">store</h2>
+          <p class="store__explain">手作りのインテリアが並ぶ<br>アンティーク調の店内は<br>皆様の“Sanctuary“(聖域)に<br>なりますように<br>という願いを込めた空間に</p>
+          <div class="store__img">
+            <img class="store__img--first" src="img/store/img1.jpg" alt="内観が広く見渡せる画像">
+            <img class="store__img--second" src="img/store/img3.jpg" alt="座席と照明">
+            <img class="store__img--third" src="img/store/img2.jpg" alt="厨房前のインテリア">
+          </div>
+        </section>
+
+        <!------------ menu ------------>
+        <section id="link-menu" class="menu appear">
+          <h2 class="menu__title">menu</h2>
+
+          <!-- swiperを使ったメニューのカルーセル -->
+          <div class="swiper">
+            <div class="swiper-wrapper">
+
+              <!-- 1枚目：ワッフル -->
+              <div class="swiper-slide">
+                <img src="img/menu/img_waffle.jpg" alt="ワッフルの画像">
+                <div>
+                  <h3 class="swiper-slide__title">Waffle</h3>
+                  <p class="swiper-slide__txt">一番人気の「季節のワッフル」は<br>杏・イチゴ・マスカット・かぼちゃなど<br>季節ごとに旬の食材をセレクト</p>
+                </div>
+              </div>
+              <!-- 2枚目：コーヒー -->
+              <div class="swiper-slide">
+                <img src="img/menu/img_coffee.jpg" alt="コーヒーの画像">
+                <div>
+                  <h3 class="swiper-slide__title">Coffee</h3>
+                  <p class="swiper-slide__txt">豆からこだわった自家焙煎のコーヒーは<br>苦味の中にほのかな酸味と甘みが広がる</p>
+                </div>
+              </div>
+              <!-- 3枚目：プリン -->
+              <div class="swiper-slide">
+                <img src="img/menu/img_pudding.png" alt="プリンの画像"><div>
+                  <h3 class="swiper-slide__title">Pudding</h3>
+                  <p class="swiper-slide__txt">生クリームがたっぷりのった<br>むっちりかためのカスタードプリン<br>秋限定「かぼちゃのプリン」も大人気</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <a class="menu-table">
+            <p class="menu-table__txt">メニュー表</p>
+            <span class="menu-table__arrow"></span>
+          </a>
+        </section>
+      </div>
+      <!------------ info ------------>
+      <section id="link-info" class="info appear">
+        <h2 class="info__title">info</h2>
+        <div class="info__wrapper">
+          <!-- 左：店舗入り口写真 -->
+          <div class="info__img">
+            <img src="img/info/img1.png" alt="外観の写真">
+          </div>
+          <!-- 右：営業時間と電話番号 -->
+          <div class="info__explain">
+            <ul class="info__list">
+              <li class="info__list--header">営業時間</li>
+              <li>平日：11:00 ~ 18:30（L.O  17:45）</li>
+              <li>休日：11:00 ~ 19:00（L.O  18:15）</li>
+              <li>定休日：火・水</li>
+              <!-- 注意書き -->
+              <li class="info__list--remarks">※モーニング・夜カフェは<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;しばらくお休みいたします</li>
+              <li class="info__list--header">電話番号</li>
+              <li>03-5686-1006</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!------------ access ------------>
+      <section id="link-access" class="access appear">
+        <h2 class="access__title">access</h2>
+        <div class="access__wrapper">
+          <p class="access__detail">東武スカイツリーライン「西新井」駅　東口徒歩7分</p>
+          <iframe class="access__map" title="google-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3236.8397829114033!2d139.78781415686936!3d35.77931177794534!3m2!1i1024!2i768!4f27!3m3!1m2!1s0x601891e94569bfad%3A0x4221b87f2274e3d9!2z44Kr44OV44Kn44O744K144Oz44Kv44OB44Ol44Ki44Oq!5e0!3m2!1sja!2sjp!4v1677433442256!5m2!1sja!2sjp" width="96%" style="border-radius: 32px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+
+      <!------------ contact ------------>
+      <section id="link-contact" class="contact appear">
+        <h2 class="contact__title">contact</h2>
+        <!-- Web予約 -->
+        <a class="contact__reserve" href="https://epark.jp/shopinfo/fsp578105/?widgetimp=1">Web予約はこちら</a>
+        <!-- その他問い合わせフォーム -->
+        <form class="contact__other--form">
+          <label class="contact__other--header">■その他お問い合わせ</label>
+          <input class="contact__input" type="text" name="name" placeholder="お名前">
+          <input class="contact__input" type="text" name="email" placeholder="メールアドレス">
+          <input class="contact__input" type="text" name="telephone" placeholder="電話番号">
+          <textarea class="contact__input content" type="text" name="content" cols="90" rows="4" placeholder="問い合わせ内容"></textarea>
+        </form>
+        <input class="contact__submit" type="submit" value="送信する">
+      </section>
+    </main>
+    <footer class="footer load">
+      <a class="footer__img" href="https://www.instagram.com/cafe.sanctuary/" target="_blank">
+        <img src="img/footer/logo_insta_white.png" alt="インスタのアイコン">
+      </a>
+      <p class="footer__txt">&copy;2023 Cafe Sanctuary.</p>
+    </footer>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script defer src="js/main.js"></script>
+  </body>

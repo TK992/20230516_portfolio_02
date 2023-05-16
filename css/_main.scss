@@ -1,0 +1,455 @@
+@use "common" as *;
+
+// ----------- ファーストビュー ----------
+.fv {
+  position: relative;
+  text-align: left;
+}
+
+.fv__bgc {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 98%;
+  height: 70px;
+  background-color: $cGray;
+  opacity: 0.7;
+}
+
+.fv__title {
+  margin: 0;
+  color: $cWhite;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.fv__img--waffle {
+  margin-top: 64px;
+  margin-left: 24px;
+  width: 90%;
+  border-radius: 32px;
+}
+
+.fv__img--coffee {
+  margin-top: 8px;
+  width: 250px;
+  margin-left: 16px;
+  border-radius: 24px;
+}
+
+
+// ----------- オレンジの背景 ----------
+
+.bgc {
+  position: relative;
+  overflow: hidden;
+}
+
+.bgc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -227px;
+  border-radius: 50%;
+  width: 1600px;
+  height: 1320px;
+  z-index: -1;
+  background-image: linear-gradient(
+    150deg,
+    hsl(23deg 100% 77%) 0%,
+    hsl(17deg 91% 74%) 24%,
+    hsl(11deg 83% 70%) 35%,
+    hsl(6deg 74% 66%) 43%,
+    hsl(0deg 65% 63%) 83%
+    );
+}
+  
+  
+// ----------- store ----------
+.store {
+  position: relative;
+}
+
+.store__title {
+  display: block;
+  padding-top: 140px;
+  padding-bottom: 48px;
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
+}
+
+.store__explain {
+    position: absolute;
+    top: 43%;
+    right: 4px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+.store__img{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  height: 370px;
+}
+
+.store__img--first {
+  width: 40%;
+  border-radius: 15px;
+  margin-left: 2%;
+}
+
+.store__img--second {
+  width: 38%;
+  border-radius: 14px;
+  margin-top: 8px;
+  margin-left: 13%;
+}
+
+.store__img--third {
+  position: absolute;
+  top: 72%;
+  left: 55%;
+  width: 40%;
+  border-radius: 15px;
+}
+
+
+
+// ----------- メニュー ----------
+.menu__title {
+  display: block;
+  padding-top: 80px;
+  padding-bottom: 48px;
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
+}
+
+.swiper-slide {
+  width: 85%;
+}
+
+.swiper-slide img {
+  width: 85%;
+  border-radius: 26px;
+}
+
+.swiper-slide__title {
+  display: inline-block;
+  text-align: center;
+  padding-top: 24px;
+  border-bottom: 2px solid $cWhite;
+  margin-bottom: 16px;
+  font-size: clamp(0.75rem, 1.3vw + 0.5rem, 1.25rem);
+}
+
+.swiper-slide__txt {
+  padding-bottom: 32px;
+  font-size: clamp(0.75rem, 1.3vw + 0.5rem, 1.25rem);
+}
+
+.swiper-button-prev {
+  top: 30%;
+  color: $cWhite;
+}
+
+.swiper-button-next {
+  top: 30%;
+  color: $cWhite;
+}
+
+.menu-table {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 200px;
+  cursor: pointer;
+}
+
+.menu-table__txt {
+  position: absolute;
+  top: 32px;
+  right: 16px;
+  font-size: clamp(0.625rem, 0.8vw + 0.5rem, 0.875rem);
+}
+
+.menu-table__arrow {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  display: block;
+  width: 68px;
+  height: 6px;
+  border-bottom: 2px solid $cWhite;
+  border-right: 2px solid $cWhite;
+  transform: skew(45deg);
+}
+
+
+// ----------- info ----------
+.info {
+  color: $cGreen;
+}
+
+.info__title {
+  display: block;
+  padding-bottom: 48px;
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
+}
+
+.info__wrapper {
+  display: flex;
+}
+
+.info__img {
+  width: 40%;
+  margin-left: 16px;
+  box-sizing: border-box;
+}
+
+.info__img img {
+  width: 100%;
+}
+  
+.info__explain {
+  text-align: left;
+  width: 60%;
+  font-size: clamp(0.625rem, 2vw + 0.25rem, 1.125rem);
+}
+  
+.info__list {
+  list-style: none;
+  padding-top: 5%;
+  padding-left: 16px;
+}
+
+.info__list--header {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-top: 3%;
+  margin-bottom: 4px;
+}
+
+.info__list--remarks {
+  font-size: clamp(0.5rem, 1.3vw + 0.25rem, 1rem);
+  margin: 6% 0 10%;
+}
+
+
+// ----------- access ----------
+.access {
+  color: $cGreen;
+}
+
+.access__title {
+  display: block;
+  padding-top: 80px;
+  padding-bottom: 48px;
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
+}
+
+.access__detail{
+  text-align: left;
+  margin-bottom: 4px;
+  margin-left: 16px;
+  font-size: clamp(0.75rem, 1.2vw + 0.5rem, 1.25rem);
+}
+
+.access__map {
+  height: 300px;
+}
+
+
+// ----------- contact ----------
+.contact {
+  color: $cGreen;
+}
+
+.contact__title {
+  display: block;
+  padding-top: 80px;
+  padding-bottom: 48px;
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
+}
+
+.contact__reserve {
+  display: inline-block;
+  width: 80%;
+  line-height: 32px;
+  background-color: $cGreen;
+  border-radius: 10px;
+  font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.375rem);
+  color: $cWhite;
+  text-decoration: none;
+  box-shadow: 1px 1px 3px $cShadow;
+}
+
+.contact__other--form {
+  display: flex;
+  flex-direction: column;
+  text-align-last: left;
+  width: 90%;
+  font-size: 12px;
+}
+
+.contact__other--header {
+  margin-top: 48px;
+  margin-bottom: 8px;
+  margin-left: 16px;
+  font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.375rem);
+}
+
+.contact__input {
+  margin-left: 32px;
+  margin-top: 16px;
+  border-bottom: solid 1px $cShadow;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.contact__input content {
+  line-height: 40px;
+  resize: vertical;
+}
+
+.contact__submit {
+  margin-top: 24px;
+  display: inline-block;
+  width: 30%;
+  line-height: 24px;
+  background-color: $cGreen;
+  border-radius: 4px;
+  font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.375rem);
+  color: $cWhite;
+  text-decoration: none;
+  box-shadow: 1px 1px 3px $cShadow;
+}
+
+
+
+// ----------- デスクトップ用デザイン -----------
+@media screen and (min-width:551px) {
+
+  // ----------- ファーストビュー ----------
+  .fv {
+    &-title {
+      margin: 13% 0 2%
+    }
+
+    &-img-sp {
+      display: none;
+    }
+    
+    &-img-pc {
+      display: block;
+      width: 100%;
+      height: 80vh;
+      object-fit: cover;
+    }
+  }
+  
+
+  // ----------- ストア ----------
+  .store {
+    
+    &-explain {
+      position: relative;
+      padding-bottom: 3%;
+    }
+    
+    &-img {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    
+    img {
+      position: relative;
+      width: 30%;
+      margin: 0;
+      right: 0;
+    }
+  }
+  
+
+  // ----------- メニュー ----------
+  .menu {
+    
+    .swiper {
+      width: 80%;
+      
+      &-button-next, &-button-prev {
+        top: 27%;
+      }
+    
+    p {
+      padding-bottom: 15%;
+      }
+    }
+
+    .arrow {
+      width: 75px;
+    }
+  }
+  
+  
+  // ----------- インフォメーション ----------
+  .info {
+    
+    img {
+      margin-left: 10%;
+      width: 85%;
+    }
+
+    ul {
+      padding: 5% 0 0 25%;
+    }
+  
+    &-remarks {
+      margin: 10% 0 20%;
+    }
+  }
+  
+  
+  // ----------- アクセス ----------
+  .access {
+  
+    p {
+      margin: 2% 1% 2% 2%;
+    }
+  
+    &-map {
+      height: 400px;
+    }
+  } 
+  
+  
+  // ----------- コンタクト ----------
+  .contact {
+    
+    &-reserve {
+      line-height: 45px;
+      transition: 0.3s;
+      box-shadow: 3px 3px 5px $cShadow;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  
+    &-input {
+      line-height: 30px;
+    }
+
+    .content {
+      height: 150px;
+      margin-bottom: 10%;
+    }
+  
+    &-submit {
+      line-height: 45px;
+    }
+  }
+}

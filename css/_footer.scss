@@ -4,26 +4,22 @@
 .footer {
   height: auto;
   margin-top: 40px;
-  background-image: linear-gradient(
-    235deg,
-    hsl(23deg 100% 77%) 0%,
-    hsl(11deg 83% 70%) 50%,
-    hsl(0deg 65% 63%) 100%
-    );
+  background-color: $cBrown;
 }
 
-.footer__img {
+.footer__link {
   display: inline-block;
   padding-top: 16px;
   padding-bottom: 8px;
   width: 30px;
 }
 
-.footer__img img {
+.footer__img {
   width: 30px;
 }
 
 .footer__txt {
-  font-size: clamp(0.625rem, 1.5vw + 0.25rem, 1rem);
   padding-bottom: 4px;
+  font-size: clamp(0.625rem, 1.5vw + 0.25rem, 1rem);
+  color: $cWhite;
 }

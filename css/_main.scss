@@ -6,39 +6,144 @@
   text-align: left;
 }
 
-.fv__bgc {
+.fv__wrapper {
   position: absolute;
-  top: 16px;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 98%;
-  height: 70px;
-  background-color: $cGray;
-  opacity: 0.7;
+  top: 74%;
+  right: 5%;
+  // display: flex;
+  // justify-content: right;
+  text-align: right;
 }
 
 .fv__title {
-  margin: 0;
   color: $cWhite;
+  font-family: m-plus-rounded-1m, sans-serif;
   font-weight: 500;
+  font-style: normal;
   font-size: 20px;
+  line-height: 1.5;
 }
 
-.fv__img--waffle {
-  margin-top: 64px;
-  margin-left: 24px;
-  width: 90%;
-  border-radius: 32px;
+.fv__img {
+  display: inline-block;
+  margin-top: 40px;
 }
 
-.fv__img--coffee {
-  margin-top: 8px;
-  width: 250px;
+.fv__img--sp {
+  width: 96%;
+  border-radius: 0 32px 0 0;
+}
+
+// .fv__img--pc {
+//   margin-top: 8px;
+//   width: 60%;
+//   margin-left: 16px;
+//   border-radius: 24px;
+// }
+
+
+
+// ----------- store ----------
+.store-sp {
+  margin-bottom: 60px;
+}
+
+.store-sp__title {
+  position: relative;
+  padding-top: 72px;
+  padding-bottom: 16px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.store-sp__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 12px);
+  width: 24px;
+  height: 1px;
+}
+
+.store-sp__over {
+  display: flex;
+  margin-top: 40px;
+}
+
+.store-sp__over--left {
+  position: relative;
+  margin-left: 8px;
+  width: 45%;
+}
+
+.store-sp__over--left img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 16px 0;
+}
+
+.store-sp__over--left::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 100%;
+  height: 100%;
+  background-color: $cBeige;
+  border-radius: 0 0 16px 0;
+  z-index: -1;
+}
+
+.store-sp__over--right {
+  display: flex;
+  align-items: center;
   margin-left: 16px;
-  border-radius: 24px;
+  width: 50%;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.store-sp__under {
+  display: flex;
+  margin-top: 20px;
+}
+
+.store-sp__under--left {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  width: 50%;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.store-sp__under--right {
+  position: relative;
+  margin-top: 16px;
+  margin-right: 8px;
+  width: 45%;
+}
+
+.store-sp__under--right img {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px 0 0 0;
+}
+
+.store-sp__under--right::after {
+  content: '';
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 100%;
+  height: 100%;
+  background-color: $cBeige;
+  border-radius: 16px 0 0 0;
+  z-index: -1;
+}
+
+.store-pc {
+  display: none;
 }
 
 
@@ -53,10 +158,10 @@
   content: '';
   position: absolute;
   top: 0;
-  left: -227px;
+  left: -250px;
   border-radius: 50%;
-  width: 1600px;
-  height: 1320px;
+  width: 1240px;
+  height: 1030px;
   z-index: -1;
   background-image: linear-gradient(
     150deg,
@@ -67,251 +172,308 @@
     hsl(0deg 65% 63%) 83%
     );
 }
-  
-  
-// ----------- store ----------
-.store {
-  position: relative;
+
+
+
+// ----------- menu ----------
+// フォントカラーを白に変更
+.menu {
+  color: $cWhite;
 }
 
-.store__title {
-  display: block;
-  padding-top: 140px;
-  padding-bottom: 48px;
-  font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
-}
-
-.store__explain {
-    position: absolute;
-    top: 43%;
-    right: 4px;
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-.store__img{
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  height: 370px;
-}
-
-.store__img--first {
-  width: 40%;
-  border-radius: 15px;
-  margin-left: 2%;
-}
-
-.store__img--second {
-  width: 38%;
-  border-radius: 14px;
-  margin-top: 8px;
-  margin-left: 13%;
-}
-
-.store__img--third {
-  position: absolute;
-  top: 72%;
-  left: 55%;
-  width: 40%;
-  border-radius: 15px;
-}
-
-
-
-// ----------- メニュー ----------
+// セクションタイトル
 .menu__title {
+  position: relative;
   display: block;
-  padding-top: 80px;
-  padding-bottom: 48px;
-  font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
+  padding-top: 60px;
+  padding-bottom: 16px;
+  font-size: 24px;
+  font-weight: 500;
 }
 
+// セクションタイトルの下線
+.menu__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 12px);
+  width: 24px;
+  height: 1px;
+}
+
+// カルーセルのコンテナ
 .swiper-slide {
-  width: 85%;
+  position: relative;
+  margin-top: 64px;
+  margin-right: auto;
+  margin-left: auto;
+  color: $cBrown;
 }
 
-.swiper-slide img {
-  width: 85%;
-  border-radius: 26px;
+// スライドの背景色
+.swiper-slide::after {
+  content: '';
+  position: absolute;
+  top: -24px;
+  right: 6%;
+  bottom: 0;
+  left: 6%;
+  background-color: $cBeige;
+  z-index: -2;
 }
 
+// スライドの写真
+.swiper-slide__img {
+  width: 78%;
+}
+
+// メニュー名
 .swiper-slide__title {
+  position: relative;
   display: inline-block;
   text-align: center;
-  padding-top: 24px;
-  border-bottom: 2px solid $cWhite;
-  margin-bottom: 16px;
-  font-size: clamp(0.75rem, 1.3vw + 0.5rem, 1.25rem);
+  margin-top: 32px;
+  margin-bottom: 24px;
+  font-size: 20px;
 }
 
+// メニュー名「ワッフル」の背後に「waffle」
+.waffle::after {
+  content: 'Waffle';
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 76px);
+  font-family: 'Kaushan Script';
+  font-size: 56px;
+  color: $cWhite;
+  opacity: 0.6;
+  z-index: -1;
+}
+// ※他メニューにも継承※
+.pudding::after {
+  @extend .waffle;
+  content: 'pudding';
+}
+.coffee::after {
+  @extend .waffle;
+  content: 'coffee';
+}
+
+// メニューの説明
 .swiper-slide__txt {
-  padding-bottom: 32px;
-  font-size: clamp(0.75rem, 1.3vw + 0.5rem, 1.25rem);
+  height: 124px;
+  padding-bottom: 64px;
+  font-size: 14px;
 }
 
+// スライドの戻るボタン
 .swiper-button-prev {
-  top: 30%;
+  top: 35%;
   color: $cWhite;
 }
 
+// スライドの進むボタン
 .swiper-button-next {
-  top: 30%;
+  top: 35%;
   color: $cWhite;
 }
 
-.menu-table {
+// リンク「VIEW ALL」のコンテナ
+.menu__link {
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  height: 200px;
   cursor: pointer;
 }
 
-.menu-table__txt {
+// リンク「VIEW ALL」のテキスト
+.menu__link--txt {
   position: absolute;
-  top: 32px;
-  right: 16px;
-  font-size: clamp(0.625rem, 0.8vw + 0.5rem, 0.875rem);
+  display: flex;
+  top: -44px;
+  right: 12%;
+  font-size: 14px;
+  color: $cBrown;
+  z-index: 1;
 }
 
-.menu-table__arrow {
+// リンク「VIEW ALL」の矢印
+.menu__link--txt::after {
+  content: '';
   position: absolute;
-  top: 50px;
-  right: 10px;
-  display: block;
-  width: 68px;
-  height: 6px;
-  border-bottom: 2px solid $cWhite;
-  border-right: 2px solid $cWhite;
+  top: 12px;
+  right: -22%;
+  width: 80px;
+  height: 8px;
+  border-bottom: 1px solid $cBrown;
+  border-right: 1px solid $cBrown;
   transform: skew(45deg);
 }
 
 
 // ----------- info ----------
 .info {
-  color: $cGreen;
+  color: $cWhite;
+  padding-bottom: 95px;
 }
 
+// セクションタイトル
 .info__title {
+  position: relative;
   display: block;
-  padding-bottom: 48px;
+  padding-top: 72px;
+  padding-bottom: 16px;
+  font-size: 24px;
+  font-weight: 500;
   font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
 }
 
-.info__wrapper {
-  display: flex;
+// セクションタイトルの下線
+.info__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 12px);
+  width: 24px;
+  height: 1px;
 }
 
+// 写真とテキストを横に並べる
+.info__wrapper {
+  display: flex;
+  margin-top: 40px;
+}
+
+// 外観の写真のコンテナ
 .info__img {
   width: 40%;
   margin-left: 16px;
-  box-sizing: border-box;
 }
 
+// 外観の写真
 .info__img img {
   width: 100%;
 }
-  
-.info__explain {
+
+// 営業時間と電話番号をリスト化
+.info__list {
   text-align: left;
   width: 60%;
-  font-size: clamp(0.625rem, 2vw + 0.25rem, 1.125rem);
-}
-  
-.info__list {
   list-style: none;
-  padding-top: 5%;
-  padding-left: 16px;
+  margin-left: 16px;
 }
 
+// リストのヘッダー
 .info__list--header {
-  font-weight: bold;
+  font-size: 14px;
   text-decoration: underline;
-  margin-top: 3%;
-  margin-bottom: 4px;
+  margin-top: 6%;
+  margin-bottom: 1%;
 }
 
-.info__list--remarks {
-  font-size: clamp(0.5rem, 1.3vw + 0.25rem, 1rem);
-  margin: 6% 0 10%;
+// リストの本文
+.info__list--item {
+  font-size: 12px;
 }
+
 
 
 // ----------- access ----------
-.access {
-  color: $cGreen;
+// セクションタイトル
+.access__title {
+  position: relative;
+  display: block;
+  padding-top: 25px;
+  padding-bottom: 16px;
+  font-size: 24px;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
 }
 
-.access__title {
-  display: block;
-  padding-top: 80px;
-  padding-bottom: 48px;
-  font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
+// セクションタイトルの下線
+.access__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 12px);
+  width: 24px;
+  height: 1px;
 }
 
 .access__detail{
   text-align: left;
+  margin-top: 40px;
   margin-bottom: 4px;
-  margin-left: 16px;
+  margin-left: 24px;
   font-size: clamp(0.75rem, 1.2vw + 0.5rem, 1.25rem);
 }
 
 .access__map {
-  height: 300px;
+  height: 200px;
 }
 
 
 // ----------- contact ----------
-.contact {
-  color: $cGreen;
-}
-
+// セクションタイトル
 .contact__title {
+  position: relative;
   display: block;
-  padding-top: 80px;
-  padding-bottom: 48px;
+  padding-top: 30px;
+  padding-bottom: 16px;
+  font-size: 24px;
+  font-weight: 500;
   font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
 }
 
+// セクションタイトルの下線
+.contact__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 12px);
+  width: 24px;
+  height: 1px;
+}
+
+// Web予約ボタン
 .contact__reserve {
   display: inline-block;
-  width: 80%;
-  line-height: 32px;
+  width: 70%;
   background-color: $cGreen;
   border-radius: 10px;
   font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.375rem);
+  line-height: 32px;
   color: $cWhite;
   text-decoration: none;
   box-shadow: 1px 1px 3px $cShadow;
 }
 
-.contact__other--form {
+.contact__form {
   display: flex;
   flex-direction: column;
+  gap: 8px;
   text-align-last: left;
+  margin-left: 5%;
   width: 90%;
-  font-size: 12px;
+  font-size: 10px;
 }
 
-.contact__other--header {
-  margin-top: 48px;
-  margin-bottom: 8px;
-  margin-left: 16px;
+.contact__header {
+  margin-top: 40px;
+  margin-bottom: 16px;
   font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.375rem);
 }
 
 .contact__input {
-  margin-left: 32px;
-  margin-top: 16px;
+  width: 50%;
+  line-height: 2;
+  margin-left: 8px;
+  padding-left: 4px;
   border-bottom: solid 1px $cShadow;
-  padding-bottom: 5px;
-  cursor: pointer;
+  background-color: #fff;
 }
 
-.contact__input content {
-  line-height: 40px;
+.contact__input:last-child {
+  width: 90%;
   resize: vertical;
 }
 
@@ -319,137 +481,11 @@
   margin-top: 24px;
   display: inline-block;
   width: 30%;
-  line-height: 24px;
+  line-height: 32px;
   background-color: $cGreen;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.375rem);
   color: $cWhite;
   text-decoration: none;
   box-shadow: 1px 1px 3px $cShadow;
-}
-
-
-
-// ----------- デスクトップ用デザイン -----------
-@media screen and (min-width:551px) {
-
-  // ----------- ファーストビュー ----------
-  .fv {
-    &-title {
-      margin: 13% 0 2%
-    }
-
-    &-img-sp {
-      display: none;
-    }
-    
-    &-img-pc {
-      display: block;
-      width: 100%;
-      height: 80vh;
-      object-fit: cover;
-    }
-  }
-  
-
-  // ----------- ストア ----------
-  .store {
-    
-    &-explain {
-      position: relative;
-      padding-bottom: 3%;
-    }
-    
-    &-img {
-      display: flex;
-      justify-content: space-evenly;
-    }
-    
-    img {
-      position: relative;
-      width: 30%;
-      margin: 0;
-      right: 0;
-    }
-  }
-  
-
-  // ----------- メニュー ----------
-  .menu {
-    
-    .swiper {
-      width: 80%;
-      
-      &-button-next, &-button-prev {
-        top: 27%;
-      }
-    
-    p {
-      padding-bottom: 15%;
-      }
-    }
-
-    .arrow {
-      width: 75px;
-    }
-  }
-  
-  
-  // ----------- インフォメーション ----------
-  .info {
-    
-    img {
-      margin-left: 10%;
-      width: 85%;
-    }
-
-    ul {
-      padding: 5% 0 0 25%;
-    }
-  
-    &-remarks {
-      margin: 10% 0 20%;
-    }
-  }
-  
-  
-  // ----------- アクセス ----------
-  .access {
-  
-    p {
-      margin: 2% 1% 2% 2%;
-    }
-  
-    &-map {
-      height: 400px;
-    }
-  } 
-  
-  
-  // ----------- コンタクト ----------
-  .contact {
-    
-    &-reserve {
-      line-height: 45px;
-      transition: 0.3s;
-      box-shadow: 3px 3px 5px $cShadow;
-
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-  
-    &-input {
-      line-height: 30px;
-    }
-
-    .content {
-      height: 150px;
-      margin-bottom: 10%;
-    }
-  
-    &-submit {
-      line-height: 45px;
-    }
-  }
 }

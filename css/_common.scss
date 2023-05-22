@@ -2,26 +2,45 @@
 $cGreen: #789C87;
 $cPink: #DE6262;
 $cOrange: #FFB88C;
-$cBeige: #FFEFE0;
+$cBeige: #F0D8C1;
+$cCream: #FFEFE0;
 $cWhite: #ffffff;
 $cBlack: #565656;
+$cBrown: #815B2E;
 $cGray: #484848;
 $cShadow: #b2b2b2;
 
 // ----------- 基本スタイル ----------
+
+// PCのブレークポイント
+@mixin mq() {
+  @media screen and (min-width: 767px) {
+    @content;
+  }
+}
+
 html {
   font-size: 16px;
-  font-family: 'Kiwi Maru', 'Quicksand', 'Noto Sans JP', sans-serif;
-  font-weight: 300;
+  font-family: 'm-plus-rounded-1m','Kaushan Script', cursive, 'Kiwi Maru', serif, 'Noto Sans JP', sans-serif, 'Quicksand', sans-serif;
+  font-weight: 400;
 }
 
 body {
-  max-width: 430px;
+  position: relative;
   box-sizing: border-box;
   text-align: center;
+  max-width: 430px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #FFEFE0;
-  color: $cWhite;
+  color: $cBrown;
+
+  @include mq() {
+    max-width: 1728px;
+  }
 }
+
+* {box-sizing: border-box;}
 
 
 // ----------- ローダー ----------
@@ -59,15 +78,22 @@ body {
   display: none;
 }
 
+// ----------- アンカーリンク ----------
+.anchor-link {
+  position: absolute;
+  top: 105vh;
+  left: 5%;
+}
+
 
 // ----------- デスクトップ用デザイン -----------
-@media screen and (min-width:551px) {
+// @media screen and (min-width:551px) {
   
-  body {
-    max-width: 800px;
-  }
+//   body {
+//     max-width: 800px;
+//   }
   
-  h2 {
-    padding: 20% 0 10%;
-  }
-}
+//   h2 {
+//     padding: 20% 0 10%;
+//   }
+// }

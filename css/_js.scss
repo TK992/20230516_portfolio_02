@@ -6,11 +6,23 @@
   transition: all 0.4s;
 }
 
-// 消えている要素を表示し位置を戻す
+// 消えている要素を表示・位置を元に戻す
 .show {
   transform: none;
   opacity: 1;
   visibility: visible;
+}
+
+// modalのみで使用
+// 消えている要素を表示・クリックイベントを有効にする
+.showModal {
+  opacity: 1;
+  pointer-events: all;
+}
+
+// クリックでアニメーションを停止
+.stopAnimation {
+  animation-play-state: paused;
 }
 
 // SP用ナビゲーションを開く

@@ -90,10 +90,78 @@ menuLink.forEach(elm => {
 
 
   // PC閲覧時にstoreセクションの文言変更
-  const text = document.querySelector('.store__explain');
+  // const text = document.querySelector('.store__explain');
   
-  if(window.matchMedia("(min-width:551px)").matches) {
-    text.innerHTML = "手作りのインテリアが並ぶアンティーク調の店内は<br>皆様の“Sanctuary“になりますようにという願いを込めた空間に";
-  }
+  // if(window.matchMedia("(min-width:551px)").matches) {
+  //   text.innerHTML = "手作りのインテリアが並ぶアンティーク調の店内は<br>皆様の“Sanctuary“になりますようにという願いを込めた空間に";
+  // }
+  
 
+  // 「photo」セクションのスライドアニメーション
+  // 横1列に並べたスライドを2分割し、一方に追従させてループを持続する
+
+  // elm：アニメーションさせるclass
+  // start：スライドの開始位置
+  // end：スライド終了位置
+  // iteration：アニメーション開始時の進行度
+  function slideAnimation(elm, start, end, iteration) {
+    const slides = document.querySelectorAll(elm);
+
+    slides.forEach((slide) => {
+      slide.animate( [ {
+        transform : `translateX(${start})`,
+        } , {
+        transform : `translateX(${end})` ,
+      } ] , {
+        iterationStart: `${iteration}`,
+        duration: 30000,
+        iterations: Infinity
+      });
+    });
+  };
+
+  // 要素が読み込まれたらアニメーション開始
+  window.addEventListener("DOMContentLoaded", () => {
+    // 上段のスライドアニメーション
+    slideAnimation('.photo__slide--over', '600%', '-600%', 0.5);
+    slideAnimation('.photo__slide--over2', '0%', '-1200%',0);
+    // 下段のスライドアニメーション
+    slideAnimation('.photo__slide--under', '-600%', '600%', 0.5);
+    slideAnimation('.photo__slide--under2', '-1200%', '0%',0);
+  })
+
+
+
+  // photoセクションの画像クリックでモーダルを表示
+  const modal = document.querySelector('.photo__modal');
+  const modalImage = document.querySelector('.photo__modal--img');
+  const images = document.querySelectorAll('.slide');
+  // const images2 = document.querySelectorAll('photo__slide2');
+
+  images.forEach((image) => {
+    image.addEventListener('click', () => {
+      modal.classList.add('showModal');
+      modalImage.classList.add('showModal');
+      
+      const imageSrc = image.getAttribute('data-src');
+      modalImage.src = imageSrc;
+    });
+  });
+  // 同じ機能の関数が2つあるからまとめる
+  // slides2.forEach(function(image) {
+  //   image.addEventListener('click', function() {
+  //     modal.classList.add('showModal');
+  //     modalImage.classList.add('showModal');
+      
+  //     const imageSrc = image.getAttribute('data-src');
+  //     modalImage.src = imageSrc;
+  //   });
+  // });
+        
+  modal.addEventListener('click', function() {
+    if (this.classList.contains('showModal')) {
+      this.classList.remove('showModal');
+      modalImage.classList.remove('showModal');
+    }
+  });
 }

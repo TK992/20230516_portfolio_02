@@ -1,6 +1,6 @@
 // 配色
 $cGreen: #789C87;
-$cPink: #DE6262;
+$cPink: #d77171;
 $cOrange: #FFB88C;
 $cBeige: #F0D8C1;
 $cCream: #FFEFE0;
@@ -14,33 +14,41 @@ $cShadow: #b2b2b2;
 
 // PCのブレークポイント
 @mixin mq() {
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 1023px) {
     @content;
   }
 }
 
 html {
   font-size: 16px;
-  font-family: 'm-plus-rounded-1m','Kaushan Script', cursive, 'Kiwi Maru', serif, 'Noto Sans JP', sans-serif, 'Quicksand', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 body {
   position: relative;
-  box-sizing: border-box;
   text-align: center;
   max-width: 430px;
   margin-left: auto;
   margin-right: auto;
   background-color: #FFEFE0;
   color: $cBrown;
-
+  
   @include mq() {
-    max-width: 1728px;
+    width: 80%;
+    max-width: 1280px;
+    padding-right: 10%;
+    padding-left: 10%;
   }
 }
 
-* {box-sizing: border-box;}
+// section {
+//   @include mq() {
+//   }
+// }
+
+// * {box-sizing: border-box;}
 
 
 // ----------- ローダー ----------

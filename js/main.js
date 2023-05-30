@@ -136,7 +136,6 @@ menuLink.forEach(elm => {
   const modal = document.querySelector('.photo__modal');
   const modalImage = document.querySelector('.photo__modal--img');
   const images = document.querySelectorAll('.slide');
-  // const images2 = document.querySelectorAll('photo__slide2');
 
   images.forEach((image) => {
     image.addEventListener('click', () => {
@@ -147,16 +146,6 @@ menuLink.forEach(elm => {
       modalImage.src = imageSrc;
     });
   });
-  // 同じ機能の関数が2つあるからまとめる
-  // slides2.forEach(function(image) {
-  //   image.addEventListener('click', function() {
-  //     modal.classList.add('showModal');
-  //     modalImage.classList.add('showModal');
-      
-  //     const imageSrc = image.getAttribute('data-src');
-  //     modalImage.src = imageSrc;
-  //   });
-  // });
         
   modal.addEventListener('click', function() {
     if (this.classList.contains('showModal')) {

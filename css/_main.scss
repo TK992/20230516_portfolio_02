@@ -15,7 +15,6 @@
 
 .fv__title {
   color: $cWhite;
-  font-weight: bold;
   font-size: clamp(1rem, 2.6vw + 0.5rem, 2.5rem);
   line-height: 1.5;
 }
@@ -45,7 +44,6 @@
   padding-top: 64px;
   padding-bottom: 24px;
   font-size: 24px;
-  font-weight: bold;
 }
 
 // セクションタイトルの下線
@@ -161,7 +159,6 @@
   padding-top: 64px;
   padding-bottom: 24px;
   font-size: 24px;
-  font-weight: bold;
 }
 
 // セクションタイトルの下線
@@ -296,7 +293,6 @@
   margin-top: 64px;
   padding-bottom: 24px;
   font-size: 24px;
-  font-weight: bold;
 }
 
 // セクションタイトルの下線
@@ -314,7 +310,7 @@
 // 写真とテキストを横に並べる
 .info__wrapper {
   display: flex;
-  margin-top: 24px;
+  margin-top: 32px;
 }
 
 // 外観の写真のコンテナ
@@ -427,7 +423,6 @@
   margin-top: 96px;
   padding-bottom: 24px;
   font-size: 24px;
-  font-weight: bold;
 }
 
 // セクションタイトルの下線
@@ -445,7 +440,7 @@
 // アクセスの本文
 .access__detail {
   text-align: left;
-  margin-top: 24px;
+  margin-top: 32px;
   margin-bottom: 4px;
   margin-left: 24px;
   font-size: clamp(0.75rem, 1.2vw + 0.5rem, 1.25rem);
@@ -470,7 +465,6 @@
   margin-top: 64px;
   padding-bottom: 24px;
   font-size: 24px;
-  font-weight: bold;
 }
 
 // セクションタイトルの下線
@@ -487,7 +481,7 @@
 
 .photo__wrapper {
   display: flex;
-  margin-top: 24px;
+  margin-top: 32px;
   overflow: hidden;
 }
 
@@ -534,7 +528,6 @@
   // margin-top: 64px;
   padding-bottom: 24px;
   font-size: 24px;
-  font-weight: bold;
 }
 
 // セクションタイトルの下線
@@ -553,12 +546,11 @@
 .contact__reserve {
   display: inline-block;
   width: 70%;
-  margin-top: 24px;
-  margin-bottom: 24px;
+  margin-top: 32px;
+  margin-bottom: 32px;
   background-color: $cGreen;
   border-radius: 10px;
   font-size: 18px;
-  font-weight: bold;
   line-height: 2.5;
   color: $cWhite;
   text-decoration: none;
@@ -571,6 +563,7 @@
   flex-direction: column;
   gap: 8px;
   text-align: left;
+  font-weight: normal;
   margin-left: 5%;
   width: 90%;
 }
@@ -600,15 +593,14 @@
 
 // 送信ボタン
 .contact__submit {
-  margin-top: 24px;
-  margin-bottom: 40px;
+  margin-top: 32px;
+  margin-bottom: 64px;
   display: inline-block;
   width: 40%;
   line-height: 2.5;
   background-color: $cGreen;
   border-radius: 10px;
   font-size: 18px;
-  font-weight: bold;
   color: $cWhite;
   text-decoration: none;
   box-shadow: 1px 1px 3px $cShadow;

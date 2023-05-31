@@ -48,12 +48,13 @@
   display: block;
 }
 
-// ナビゲーションメニュー
+// SP用ナビゲーションメニュー
 .header__nav-sp {
   display: none;
   flex-direction: column;
   top: 0;
   padding-top: 15%;
+  gap: 6%;
   transform: translateX(100vw);
   width: 100vw;
   height: 100vh;
@@ -73,7 +74,6 @@
 // 各セクションへのリンク
 .header__nav-sp--link {
   text-align: left;
-  margin-bottom: 12%;
   margin-left: 25%;
   text-decoration: underline;
   color: $cGreen;
@@ -99,32 +99,49 @@
   background-color: $cGreen;
 }
 
-// PC用ナビゲーション
+// PC用ナビゲーションメニュー
 .header__nav-pc {
   display: none;
 }
 
+// 画面右端の固定リンク
 .fixed-link {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 84px;
+  right: 0;
+  width: 28px;
+  opacity: 0.8;
+  z-index: 1;
 }
 
 .fixed-link__reserve {
-  position: fixed;
-  top: 50%;
-  right: 0;
   display: flex;
-  justify-content: center;
-  width: 6%;
-  padding-top: 6px;
-  padding-bottom: 2px; /*letter-spacing:4px分減らす*/
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 4px; /*letter-spacing:4px分減らす*/
   writing-mode: vertical-rl;
   text-orientation: upright;
-  font-size: 12px;
-  letter-spacing: 4px;
+  width: 100%;
+  font-size: 14px;
+  letter-spacing: 2px;
   color: $cWhite;
   background-color: $cGreen;
-  border-radius: 4px;
+  border-radius: 6px;
   z-index: 1;
+}
+
+.fixed-link__telephone {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 100%;
+  font-size: 12px;
+  color: $cWhite;
+  background-color: $cGreen;
+  border-radius: 6px;
 }
 
 

@@ -292,7 +292,7 @@ body {
 .fv__title-wrapper {
   position: absolute;
   top: 74%;
-  left: 5%;
+  left: 4%;
   width: 85%;
   text-align: right;
 }
@@ -446,15 +446,15 @@ body {
   content: "";
   position: absolute;
   top: -24px;
-  right: 6%;
+  right: 10%;
   bottom: 0;
-  left: 6%;
+  left: 10%;
   background-color: #F0D8C1;
   z-index: -2;
 }
 
 .swiper-slide__img {
-  width: 76%;
+  width: 70%;
 }
 
 .swiper-slide__title {
@@ -502,11 +502,13 @@ body {
 
 .swiper-button-prev {
   top: 35%;
+  margin-right: 6%;
   color: #ffffff;
 }
 
 .swiper-button-next {
   top: 35%;
+  margin-left: 6%;
   color: #ffffff;
 }
 
@@ -517,11 +519,13 @@ body {
 }
 
 .menu__link--txt {
-  position: absolute;
   display: flex;
+  position: absolute;
   top: -40px;
-  right: 12%;
+  right: 15%;
   font-size: 14px;
+  text-decoration: none;
+  color: #815B2E;
   z-index: 1;
 }
 
@@ -530,7 +534,7 @@ body {
   position: absolute;
   top: 12px;
   right: -14%;
-  width: 74px;
+  width: 80px;
   height: 8px;
   border-bottom: 1px solid #815B2E;
   border-right: 1px solid #815B2E;
@@ -617,6 +621,11 @@ body {
   margin-left: 6%;
 }
 
+.info__list--item:last-child {
+  text-decoration: none;
+  color: #815B2E;
+}
+
 .info__list--last-order {
   margin-bottom: 4%;
   margin-left: 36%;
@@ -664,16 +673,15 @@ body {
 }
 
 .access__detail {
-  text-align: left;
+  text-align: center;
   margin-top: 32px;
   margin-bottom: 4px;
-  margin-left: 24px;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: normal;
 }
 
 .access__map {
-  width: 94%;
+  width: 96%;
   height: 250px;
 }
 
@@ -1197,8 +1205,9 @@ body {
 }
 
 .footer__txt {
-  padding-bottom: 4px;
+  padding-bottom: 2px;
   font-size: 10px;
+  font-weight: normal;
   color: #ffffff;
 }
 

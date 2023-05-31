@@ -123,11 +123,11 @@ menuLink.forEach(elm => {
   // 要素が読み込まれたらアニメーション開始
   window.addEventListener("DOMContentLoaded", () => {
     // 上段のスライドアニメーション
-    slideAnimation('.photo__slide--over', '600%', '-600%', 0.5);
-    slideAnimation('.photo__slide--over2', '0%', '-1200%',0);
+    slideAnimation('.photo__slide--over', '600%', '-600%', 0);
+    slideAnimation('.photo__slide--over2', '0%', '-1200%',0.5);
     // 下段のスライドアニメーション
-    slideAnimation('.photo__slide--under', '-600%', '600%', 0.5);
-    slideAnimation('.photo__slide--under2', '-1200%', '0%',0);
+    slideAnimation('.photo__slide--under', '-600%', '600%', 0);
+    slideAnimation('.photo__slide--under2', '-1200%', '0%',0.5);
   })
 
 
@@ -147,9 +147,9 @@ menuLink.forEach(elm => {
     });
   });
         
-  modal.addEventListener('click', function() {
-    if (this.classList.contains('showModal')) {
-      this.classList.remove('showModal');
+  modal.addEventListener('click', () => {
+    if (modal.classList.contains('showModal')) {
+      modal.classList.remove('showModal');
       modalImage.classList.remove('showModal');
     }
   });

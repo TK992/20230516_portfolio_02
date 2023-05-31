@@ -17,6 +17,7 @@
 // 消えている要素を表示・クリックイベントを有効にする
 .showModal {
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
 }
 

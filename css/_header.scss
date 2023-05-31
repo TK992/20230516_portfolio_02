@@ -76,23 +76,20 @@
 // 各セクションへのリンク
 .header__nav-sp--link {
   text-align: left;
-  margin-bottom: 9%;
+  margin-bottom: 12%;
   margin-left: 25%;
   text-decoration: underline;
   color: $cGreen;
   font-size: 20px;
 }
 
-.header__nav-sp--icon {
-  margin-right: 16px;
-  display: block;
-}
 
 .header__nav-sp--sns {
   display: flex;
   position: relative;
   margin-left: 25%;
-  padding-bottom: 3%;
+  padding-bottom: 4%;
+  gap: 6%;
 }
 
 .header__nav-sp--sns::after {
@@ -103,6 +100,7 @@
   height: 1px;
   background-color: $cGreen;
 }
+
 
 
 

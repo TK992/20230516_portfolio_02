@@ -99,6 +99,7 @@
   width: 50%;
   font-size: 14px;
   line-height: 1.8;
+  font-weight: normal;
 }
 
 // 下段のコンテナ
@@ -240,6 +241,7 @@
   height: auto;
   padding-bottom: 56px;
   font-size: 14px;
+  font-weight: normal;
   line-height: 1.5;
 }
 
@@ -319,7 +321,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 52%;
+  width: 50%;
   height: auto;
 }
 
@@ -350,10 +352,11 @@
 // 営業時間と電話番号をリスト化
 .info__list {
   text-align: left;
-  width: 40%;
+  width: 42%;
   list-style: none;
   line-height: 1;
   margin-left: 8%;
+  font-weight: normal;
 }
 
 // リストのヘッダー
@@ -454,6 +457,7 @@
 
 // ----------- photo ----------
 .photo {
+  position: relative;
   color: $cWhite;
   padding-bottom: 96px;
 }
@@ -479,12 +483,14 @@
   background-color: $cWhite;
 }
 
+// スライドアニメーションのコンテナ
 .photo__wrapper {
   display: flex;
   margin-top: 32px;
   overflow: hidden;
 }
 
+// モーダルの背景部分
 .photo__modal {
   position: fixed;
   width: 100vw;
@@ -496,10 +502,11 @@
   background: rgba(0,0,0,0.9);
   pointer-events: none;
   opacity: 0;
-  transition: 0.25s ease-out;
+  transition: 0.2s ease-out;
   z-index: 1;
 }
 
+// モーダルの画像表示部分
 .photo__modal--img {
   position: absolute;
   width: 50%;
@@ -508,10 +515,11 @@
   transform: translate(-50%, -50%);
   object-fit: cover;
   opacity: 0;
-  transition: 0.5s ease-out;
+  transition: 0.2s ease-out;
   z-index: 1;
 }
 
+// 各スライド
 .slide {
   padding-right: 16px;
   width: 70px;
@@ -520,12 +528,10 @@
 
 
 
-
 // ----------- contact ----------
 // セクションタイトル
 .contact__title {
   position: relative;
-  // margin-top: 64px;
   padding-bottom: 24px;
   font-size: 24px;
 }

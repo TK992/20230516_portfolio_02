@@ -132,11 +132,10 @@
 .fixed-link__reserve--txt {
   display: inline-block;
   padding-top: 8px;
-  padding-bottom: 6px;
+  padding-bottom: 8px;
   writing-mode: vertical-rl;
   text-orientation: upright;
   font-size: 14px;
-  letter-spacing: 2px;
   color: $cWhite;
   z-index: 1;
 }

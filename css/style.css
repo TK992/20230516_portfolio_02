@@ -189,11 +189,10 @@ body {
 .fixed-link__reserve--txt {
   display: inline-block;
   padding-top: 8px;
-  padding-bottom: 6px;
+  padding-bottom: 8px;
   writing-mode: vertical-rl;
   text-orientation: upright;
   font-size: 14px;
-  letter-spacing: 2px;
   color: #ffffff;
   z-index: 1;
 }
@@ -511,13 +510,13 @@ body {
 
 .swiper-button-prev {
   top: 35%;
-  margin-right: 6%;
+  margin-right: 10%;
   color: #ffffff;
 }
 
 .swiper-button-next {
   top: 35%;
-  margin-left: 6%;
+  margin-left: 10%;
   color: #ffffff;
 }
 
@@ -530,7 +529,7 @@ body {
 .menu__link--txt {
   display: flex;
   position: absolute;
-  top: -40px;
+  top: -48px;
   right: 15%;
   font-size: 14px;
   text-decoration: none;

@@ -1,20 +1,20 @@
 'use strict'
 
 {
+  // load後にローディングアイコンを削除する
+  const loader = document.querySelector('#loader')
+  window.addEventListener('load', () => {
+    loader.style.display = 'none';
+  });
 
-    // load後にローディングアイコンを削除する
-    const loader = document.querySelector('#loader')
-    window.addEventListener('load', () => {
-      loader.style.display = 'none';
+  // load後に各コンテンツを表示させる
+  window.addEventListener('load', function() {
+    const loaded = document.querySelectorAll('.load')
+      loaded.forEach(load => {
+        load.classList.remove('load')
+      })
     });
-  
-    // load後に各コンテンツを表示させる
-    window.addEventListener('load', function() {
-      const loaded = document.querySelectorAll('.load')
-        loaded.forEach(load => {
-          load.classList.remove('load')
-        })
-      });
+
 
 
   // IntersectionObserverで要素を20%読み込んだらクラスを付与する
@@ -58,17 +58,17 @@
     }, 10);
   });
 
-// SP用ナビゲーション消す
-const menuLink = document.querySelectorAll('.header__nav-sp--link');
-menuLink.forEach(elm => {
-    elm.addEventListener('click', ()=> {
-      menu.classList.remove('open');
-      
-      setTimeout(() => {
-        menu.style.display = 'none'
-      }, 400);
+  // SP用ナビゲーション消す
+  const menuLink = document.querySelectorAll('.header__nav-sp--link');
+  menuLink.forEach(elm => {
+      elm.addEventListener('click', ()=> {
+        menu.classList.remove('open');
+        
+        setTimeout(() => {
+          menu.style.display = 'none'
+        }, 300);
+    });
   });
-});
 
   // メニューのカルーセル
   const swiper = new Swiper('.swiper', {
@@ -115,11 +115,11 @@ menuLink.forEach(elm => {
   // 要素が読み込まれたらアニメーション開始
   window.addEventListener("DOMContentLoaded", () => {
     // 上段のスライドアニメーション
-    slideAnimation('.photo__slide--over2', '0%', '-1200%',0);
-    slideAnimation('.photo__slide--over', '600%', '-600%', 0.5);
+    slideAnimation('.photo__slide--over', '600%', '-600%', 0);
+    slideAnimation('.photo__slide--over2', '0%', '-1200%',0.5);
     // 下段のスライドアニメーション
-    slideAnimation('.photo__slide--under2', '-1200%', '0%',0);
-    slideAnimation('.photo__slide--under', '-600%', '600%', 0.5);
+    slideAnimation('.photo__slide--under', '-600%', '600%', 0);
+    slideAnimation('.photo__slide--under2', '-1200%', '0%',0.5);
   })
 
 
@@ -145,17 +145,4 @@ menuLink.forEach(elm => {
       modalImage.classList.remove('showModal');
     }
   });
-
-
-
-  // アンカーリンクをスムースに挙動させる
-    const anchorLink = document.querySelector('.fixed-link__anchor');
-    
-    anchorLink.addEventListener('click', e => {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
 }

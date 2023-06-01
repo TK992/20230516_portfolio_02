@@ -87,21 +87,13 @@ menuLink.forEach(elm => {
     },
   });
 
-
-
-  // PC閲覧時にstoreセクションの文言変更
-  // const text = document.querySelector('.store__explain');
-  
-  // if(window.matchMedia("(min-width:551px)").matches) {
-  //   text.innerHTML = "手作りのインテリアが並ぶアンティーク調の店内は<br>皆様の“Sanctuary“になりますようにという願いを込めた空間に";
-  // }
   
 
   // 「photo」セクションのスライドアニメーション
   // 横1列に並べたスライドを2分割し、一方に追従させてループを持続する
 
   // elm：アニメーションさせるclass
-  // start：スライドの開始位置
+  // start：スライド開始位置
   // end：スライド終了位置
   // iteration：アニメーション開始時の進行度
   function slideAnimation(elm, start, end, iteration) {
@@ -120,7 +112,6 @@ menuLink.forEach(elm => {
     });
   };
 
-  
   // 要素が読み込まれたらアニメーション開始
   window.addEventListener("DOMContentLoaded", () => {
     // 上段のスライドアニメーション
@@ -130,6 +121,7 @@ menuLink.forEach(elm => {
     slideAnimation('.photo__slide--under2', '-1200%', '0%',0);
     slideAnimation('.photo__slide--under', '-600%', '600%', 0.5);
   })
+
 
   
   // photoセクションの画像クリックでモーダルを表示
@@ -153,4 +145,17 @@ menuLink.forEach(elm => {
       modalImage.classList.remove('showModal');
     }
   });
+
+
+
+  // アンカーリンクをスムースに挙動させる
+    const anchorLink = document.querySelector('.fixed-link__anchor');
+    
+    anchorLink.addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
 }

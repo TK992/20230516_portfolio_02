@@ -136,6 +136,9 @@ body {
 
 .header__nav-sp--link {
   text-align: left;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin-left: 25%;
   text-decoration: underline;
   color: #789C87;
@@ -167,9 +170,9 @@ body {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 84px;
+  top: 360px;
   right: 0;
-  width: 28px;
+  width: 8%;
   opacity: 0.8;
   z-index: 1;
 }
@@ -178,23 +181,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  writing-mode: vertical-rl;
   width: 100%;
   height: auto;
   text-decoration: none;
   background-color: #789C87;
   border-radius: 6px;
-  z-index: 1;
 }
 
 .fixed-link__reserve--txt {
-  display: inline-block;
   padding-top: 8px;
-  padding-bottom: 8px;
-  writing-mode: vertical-rl;
+  padding-bottom: 6px;
   text-orientation: upright;
   font-size: 14px;
+  letter-spacing: 2px;
   color: #ffffff;
-  z-index: 1;
 }
 
 .fixed-link__telephone {
@@ -445,6 +446,11 @@ body {
   background-color: #815B2E;
 }
 
+.swiper {
+  position: relative;
+  z-index: 0;
+}
+
 .swiper-slide {
   position: relative;
   margin-top: 56px; /* 56 - 24(背景色の分) = 32px */
@@ -510,13 +516,13 @@ body {
 
 .swiper-button-prev {
   top: 35%;
-  margin-right: 10%;
+  margin-left: 13%;
   color: #ffffff;
 }
 
 .swiper-button-next {
   top: 35%;
-  margin-left: 10%;
+  margin-right: 13%;
   color: #ffffff;
 }
 
@@ -529,7 +535,7 @@ body {
 .menu__link--txt {
   display: flex;
   position: absolute;
-  top: -48px;
+  top: -44px;
   right: 15%;
   font-size: 14px;
   text-decoration: none;
@@ -1221,8 +1227,9 @@ body {
 
 .appear {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s;
+  transform: translateY(40px);
+  visibility: hidden;
+  transition: all 0.3s;
 }
 
 .show {

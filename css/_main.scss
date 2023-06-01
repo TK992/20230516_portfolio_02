@@ -176,6 +176,11 @@
   background-color: $cBrown;
 }
 
+.swiper {
+  position: relative;
+  z-index: 0;
+}
+
 // カルーセルのコンテナ
 .swiper-slide {
   position: relative;
@@ -250,14 +255,14 @@
 // スライドの戻るボタン
 .swiper-button-prev {
   top: 35%;
-  margin-right: 10%;
+  margin-left: 13%;
   color: $cWhite;
 }
 
 // スライドの進むボタン
 .swiper-button-next {
   top: 35%;
-  margin-left: 10%;
+  margin-right: 13%;
   color: $cWhite;
 }
 
@@ -272,7 +277,7 @@
 .menu__link--txt {
   display: flex;
   position: absolute;
-  top: -48px;
+  top: -44px;
   right: 15%;
   font-size: 14px;
   text-decoration: none;

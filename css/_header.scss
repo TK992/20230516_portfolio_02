@@ -74,6 +74,7 @@
 // 各セクションへのリンク
 .header__nav-sp--link {
   text-align: left;
+  width: fit-content;
   margin-left: 25%;
   text-decoration: underline;
   color: $cGreen;
@@ -109,35 +110,35 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 84px;
+  top: 360px;
   right: 0;
-  width: 28px;
+  width: 8%;
   opacity: 0.8;
   z-index: 1;
 }
 
-// WEB予約」ボタン
+// 「WEB予約」ボタンのコンテナ
 .fixed-link__reserve--bgc {
   display: flex;
   justify-content: center;
   align-items: center;
+  writing-mode: vertical-rl;
   width: 100%;
   height: auto;
   text-decoration: none;
   background-color: $cGreen;
   border-radius: 6px;
-  z-index: 1;
 }
 
+
+// 「WEB予約」ボタン内テキスト
 .fixed-link__reserve--txt {
-  display: inline-block;
   padding-top: 8px;
-  padding-bottom: 8px;
-  writing-mode: vertical-rl;
+  padding-bottom: 6px;
   text-orientation: upright;
   font-size: 14px;
+  letter-spacing: 2px;
   color: $cWhite;
-  z-index: 1;
 }
 
 

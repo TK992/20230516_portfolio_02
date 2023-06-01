@@ -2,7 +2,8 @@
 // 要素を20px下げて消す
 .appear {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(40px);
+  visibility: hidden;
   transition: all 0.3s;
 }
 

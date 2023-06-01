@@ -174,19 +174,27 @@ body {
   z-index: 1;
 }
 
-.fixed-link__reserve {
+.fixed-link__reserve--bgc {
   display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  height: auto;
+  text-decoration: none;
+  background-color: #789C87;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.fixed-link__reserve--txt {
+  display: inline-block;
   padding-top: 8px;
-  padding-bottom: 4px; /*letter-spacing:4px分減らす*/
+  padding-bottom: 6px;
   writing-mode: vertical-rl;
   text-orientation: upright;
-  width: 100%;
   font-size: 14px;
   letter-spacing: 2px;
   color: #ffffff;
-  background-color: #789C87;
-  border-radius: 6px;
   z-index: 1;
 }
 
@@ -196,6 +204,7 @@ body {
   padding-top: 8px;
   padding-bottom: 8px;
   width: 100%;
+  text-decoration: none;
   font-size: 12px;
   color: #ffffff;
   background-color: #789C87;

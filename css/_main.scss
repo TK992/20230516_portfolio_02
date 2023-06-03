@@ -332,7 +332,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 48%;
   height: auto;
 }
 
@@ -363,10 +363,10 @@
 // 営業時間と電話番号をリスト化
 .info__list {
   text-align: left;
-  width: 42%;
+  width: 46%;
   list-style: none;
   line-height: 1;
-  margin-left: 8%;
+  margin-left: 6%;
   font-weight: normal;
 }
 
@@ -500,7 +500,7 @@
 }
 
 // スライドアニメーションのコンテナ
-.photo__wrapper {
+.photo__wrapper--over {
   display: flex;
   margin-top: 32px;
   overflow: hidden;
@@ -537,7 +537,7 @@
 
 // 各スライド
 .slide {
-  padding-right: 16px;
+  margin-right: 16px;
   width: 70px;
   cursor: pointer;
 }
@@ -602,7 +602,7 @@
   line-height: 2;
   margin-left: 4%;
   padding-left: 4px;
-  font-size: 14px;
+  font-size: 16px;
   border-bottom: solid 1px $cShadow;
   background-color: #fff;
 }

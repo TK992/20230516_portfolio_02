@@ -154,14 +154,14 @@
       
       this.repeatSlideshow(slideshowWidth);
     }
-
+    
     repeatSlideshow(slideshowWidth) {
       const intervalId = setInterval(() => {
         this.loopSlides(slideshowWidth);
       }, 30010);
     }
   }
-    
+  
   const slideRight = new Slideshow ({
     hookName: '.photo__wrapper--over',
     startCoord: '0',

@@ -112,6 +112,10 @@
       this.$secondViewportWidth = obj.secondViewportWidth;
 
       this.addSlides(this.$slides);
+      this.loopSlides();
+      setInterval(() => {
+        this.loopSlides();
+      }, 30000);
     }
     
     // 画像を複製して最終行に追加（2周目終了後に1枚目の画像に戻すため）
@@ -131,7 +135,6 @@
     sumSlidesWidth($slides) {
       const sumSlides = $slides.children;
       const slideWidth = sumSlides[0].width;
-      console.log(sumSlides[0].width);
     
       // スライドショーの横幅
       $slides.style.width = `${(slideWidth + 16 /*スライド間のマージン*/) * (sumSlides.length)}px`;
@@ -151,14 +154,6 @@
         $slides.style.transition = 'transform 30s linear';
         $slides.style.transform = `translateX(${slideshowWidth * $end + $secondViewportWidth}px)`;
       }, 10);
-      
-      this.repeatSlideshow(slideshowWidth);
-    }
-    
-    repeatSlideshow(slideshowWidth) {
-      const intervalId = setInterval(() => {
-        this.loopSlides(slideshowWidth);
-      }, 30010);
     }
   }
   

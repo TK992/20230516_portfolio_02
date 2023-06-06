@@ -731,6 +731,12 @@ body {
   overflow: hidden;
 }
 
+.photo__wrapper--under {
+  display: flex;
+  margin-top: 32px;
+  overflow: hidden;
+}
+
 .photo__modal {
   position: fixed;
   width: 100vw;
@@ -1228,9 +1234,9 @@ body {
 
 .appear {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
   visibility: hidden;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 
 .show {

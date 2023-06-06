@@ -499,8 +499,15 @@
   background-color: $cWhite;
 }
 
-// スライドアニメーションのコンテナ
+// スライドアニメーションのコンテナ上段
 .photo__wrapper--over {
+  display: flex;
+  margin-top: 32px;
+  overflow: hidden;
+}
+
+// スライドアニメーションのコンテナ下段
+.photo__wrapper--under {
   display: flex;
   margin-top: 32px;
   overflow: hidden;

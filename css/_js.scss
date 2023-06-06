@@ -2,9 +2,9 @@
 // 要素を20px下げて消す
 .appear {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
   visibility: hidden;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 
 // 消えている要素を表示・位置を元に戻す

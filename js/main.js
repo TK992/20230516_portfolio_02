@@ -3,8 +3,8 @@
 {
   // ---------- ローディング周りの動き ----------
   // load後にローディングアイコンを削除
-  const loader = document.querySelector('#loader')
   window.addEventListener('load', () => {
+    const loader = document.querySelector('#loader')
     loader.style.display = 'none';
   });
   
@@ -100,38 +100,96 @@
   });
 
   
-
+  
   // ---------- スライドショーのアニメーション ----------
-  const slidesOver = document.querySelector('.photo__wrapper--over');
-  const slideOver = Array.from(slidesOver.children);
-  const slideWidth = slideOver[0].width;
+  
+  class Slideshow {
+    constructor(obj) {
+      this.$slides = document.querySelector(obj.hookName);
+      this.$start = obj.startCoord;
+      this.$end = obj.endCoord;
+      this.$firstViewportWidth = obj.firstViewportWidth;
+      this.$secondViewportWidth = obj.secondViewportWidth;
 
-  // 画像を複製して最終行に追加（2周目終了後に1枚目の画像に戻すため）
-  slideOver.forEach((slide) => {
-    const cloneSlide = slide.cloneNode(true);
-    cloneSlide.classList.add('clone');
-    slidesOver.appendChild(cloneSlide);
+      this.addSlides(this.$slides);
+    }
+    
+    // 画像を複製して最終行に追加（2周目終了後に1枚目の画像に戻すため）
+    addSlides($slides) {
+      const arraySlides = Array.from($slides.children);
+      
+      arraySlides.forEach((slide) => {
+        const cloneSlide = slide.cloneNode(true);
+        cloneSlide.classList.add('clone');
+        $slides.appendChild(cloneSlide);
+      })
+      
+      this.sumSlidesWidth($slides);
+    }
+    
+    // 複製分を加えたスライドショーの幅を算出
+    sumSlidesWidth($slides) {
+      const sumSlides = $slides.children;
+      const slideWidth = sumSlides[0].width;
+      console.log(sumSlides[0].width);
+    
+      // スライドショーの横幅
+      $slides.style.width = `${(slideWidth + 16 /*スライド間のマージン*/) * (sumSlides.length)}px`;
+      const slideshowWidth = (`${parseInt($slides.style.width)}`)
+
+      this.loopSlides(slideshowWidth)
+    }
+    
+    // スライドショーを動かす関数
+    loopSlides(slideshowWidth) {
+      const {$slides, $start, $end,$firstViewportWidth, $secondViewportWidth} = this;
+
+      $slides.style.transition = 'none';
+      $slides.style.transform = `translateX(${slideshowWidth * $start + $firstViewportWidth}px)`;
+      
+      setTimeout(() => {
+        $slides.style.transition = 'transform 30s linear';
+        $slides.style.transform = `translateX(${slideshowWidth * $end + $secondViewportWidth}px)`;
+      }, 10);
+      
+      this.repeatSlideshow(slideshowWidth);
+    }
+
+    repeatSlideshow(slideshowWidth) {
+      const intervalId = setInterval(() => {
+        this.loopSlides(slideshowWidth);
+      }, 30010);
+    }
+  }
+    
+  const slideRight = new Slideshow ({
+    hookName: '.photo__wrapper--over',
+    startCoord: '0',
+    endCoord: '-1',
+    firstViewportWidth: 0,
+    secondViewportWidth: window.innerWidth
   });
 
-  // 複製分を加えた画像の合計
-  const sumSlidesOver = Array.from(slidesOver.children);
-  // スライドショーの横幅
-  slidesOver.style.width = `${(slideWidth + 16) * (sumSlidesOver.length)}px`;
-
-  // スライドショーを動かす関数
-  function loopSlides() {
-    slidesOver.style.transition = 'none';
-    slidesOver.style.transform = 'translateX(16px)';
-    setTimeout(() => {
-      slidesOver.style.transition = 'transform 30s linear';
-      slidesOver.style.transform = `translateX(${-slideWidth * sumSlidesOver.length - 16}px)`;
-    }, 10);
-  }
-
-  // スライドショーの実行
-  loopSlides();
-  let intervalId = setInterval(loopSlides, 30010);
-
+  const slideLeft = new Slideshow ({
+    hookName: '.photo__wrapper--under',
+    startCoord: '-1',
+    endCoord: '0',
+    firstViewportWidth: window.innerWidth,
+    secondViewportWidth: 0
+  });
+    
+    
+      
+      
+      
+      
+      
+  
+  
+  
+  
+  
+  
   
 
   

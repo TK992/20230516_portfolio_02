@@ -104,75 +104,88 @@
   // ---------- スライドショーのアニメーション ----------
   
   class Slideshow {
-    constructor(obj) {
-      this.$slides = document.querySelector(obj.hookName);
-      this.$start = obj.startCoord;
-      this.$end = obj.endCoord;
-      this.$firstViewportWidth = obj.firstViewportWidth;
-      this.$secondViewportWidth = obj.secondViewportWidth;
+    constructor({hookName, position,}) {
+      this.slideWrapper = document.querySelector(hookName);
+      this.position = position;
+      this.viewport = window.innerWidth;
+      this.margin = 16;
+      this.interval = 30000;
 
-      this.addSlides(this.$slides);
-      this.loopSlides();
+      this.addSlides()
+      .sumSlidesWidth()
+      .loopSlides();
+
       setInterval(() => {
         this.loopSlides();
-      }, 30000);
+      }, this.interval);
     }
     
     // 画像を複製して最終行に追加（2周目終了後に1枚目の画像に戻すため）
-    addSlides($slides) {
-      const arraySlides = Array.from($slides.children);
+    addSlides() {
+      const arraySlides = Array.from(this.slideWrapper.children);
       
       arraySlides.forEach((slide) => {
         const cloneSlide = slide.cloneNode(true);
         cloneSlide.classList.add('clone');
-        $slides.appendChild(cloneSlide);
-      })
-      
-      this.sumSlidesWidth($slides);
-    }
+        this.slideWrapper.appendChild(cloneSlide);
+      });
+      return this;
+    };
     
     // 複製分を加えたスライドショーの幅を算出
-    sumSlidesWidth($slides) {
-      const sumSlides = $slides.children;
-      const slideWidth = sumSlides[0].width;
+    sumSlidesWidth() {
+      const slides = this.slideWrapper.children;
+      const slideWidth = slides[0].width;
     
       // スライドショーの横幅
-      $slides.style.width = `${(slideWidth + 16 /*スライド間のマージン*/) * (sumSlides.length)}px`;
-      const slideshowWidth = (`${parseInt($slides.style.width)}`)
-
-      this.loopSlides(slideshowWidth)
+      this.slideWrapper.style.width = `${(slideWidth + this.margin) * (slides.length)}px`;
+      return this;
     }
     
     // スライドショーを動かす関数
-    loopSlides(slideshowWidth) {
-      const {$slides, $start, $end,$firstViewportWidth, $secondViewportWidth} = this;
+    loopSlides() {
+      const {slideWrapper, position, viewport} = this;
 
-      $slides.style.transition = 'none';
-      $slides.style.transform = `translateX(${slideshowWidth * $start + $firstViewportWidth}px)`;
+      slideWrapper.style.transition = 'none';
+      if (position === 'over') {
+        slideWrapper.style.transform = 'translateX(0)';
+        console.log(slideWrapper.style.transform)
+      } else {
+        slideWrapper.style.transform = `translateX(-${parseInt(slideWrapper.style.width) - viewport}px)`;
+        console.log(slideWrapper.style.transform)
+      }
       
       setTimeout(() => {
-        $slides.style.transition = 'transform 30s linear';
-        $slides.style.transform = `translateX(${slideshowWidth * $end + $secondViewportWidth}px)`;
+        slideWrapper.style.transition = 'transform 30s linear';
+        if (position === 'over') {
+          slideWrapper.style.transform = `translateX(-${parseInt(slideWrapper.style.width) - viewport}px)`;
+          console.log(slideWrapper.style.transform)
+        } else {
+          slideWrapper.style.transform = 'translateX(0)';
+          console.log(slideWrapper.style.transform)
+        }
       }, 10);
+      return this;
     }
   }
   
   const slideRight = new Slideshow ({
     hookName: '.photo__wrapper--over',
-    startCoord: '0',
-    endCoord: '-1',
-    firstViewportWidth: 0,
-    secondViewportWidth: window.innerWidth
+    position: 'over',
   });
-
+  
   const slideLeft = new Slideshow ({
     hookName: '.photo__wrapper--under',
-    startCoord: '-1',
-    endCoord: '0',
-    firstViewportWidth: window.innerWidth,
-    secondViewportWidth: 0
+    position: 'under',
   });
     
+  // slides.style.transition = 'none';
+  // slides.style.transform = `translateX({slideshowWidth * start + firstViewportWidth}px)`;
+  
+  // setTimeout(() => {
+  //   slides.style.transition = 'transform 30s linear';
+  //   slides.style.transform = `translateX({slideshowWidth * $end + $secondViewportWidth}px)`;
+  // }, 10);
     
       
       

@@ -22,14 +22,14 @@
   pointer-events: all;
 }
 
-// クリックでアニメーションを停止
-.stopAnimation {
-  animation-play-state: paused;
-}
-
 // SP用ナビゲーションを開く
 .open {
   position: fixed;
   opacity: 1;
   transform: none; 
+}
+
+// スライドショーを動かす
+.active {
+  transition: transform 30s linear ;
 }

@@ -24,6 +24,7 @@ html {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-weight: bold;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -52,46 +53,66 @@ body {
 
 
 // ----------- ローダー ----------
-#loader {
+.loader {
+  position: relative;
+  display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
   width: 100%;
   height: 100vh;
-  transition: 0.5s;
+  animation: loading 2s infinite;
 }
   
-.loading {
-  border-radius: 50%;
-  width: 5em;
-  height: 5em;
-  font-size: 8px;
-  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-left: 1.1em solid $cShadow;
-  
-  animation: load8 1.1s infinite linear;
-}
-@keyframes load8 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.loader::before {
+  content: 'Loading...';
+  font-family: 'Shantell Sans';
+  background-repeat: no-repeat;
+  animation: loading-before 2s infinite;
 }
 
-.load {
+@keyframes loading {
+  0%, 100% { opacity: 0; }
+  30%, 70% { opacity: 1; }
+}
+
+.loading {
   display: none;
 }
 
 
-// ----------- アンカーリンク ----------
-.anchor-link {
-  position: absolute;
-  top: 105vh;
-  left: 5%;
+
+
+// ----------- 要素を消しておく ----------
+// 上方向に
+.hidden-up {
+  opacity: 0;
+  transform: translateY(-20px);
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+// 右方向に
+.hidden-right {
+  opacity: 0;
+  transform: translateX(20px);
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+// 下方向に
+.hidden-down {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+// 左方向に
+.hidden-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  visibility: hidden;
+  transition: all 0.5s;
 }
 
 

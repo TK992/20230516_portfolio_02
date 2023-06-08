@@ -10,9 +10,9 @@
   
   // load後に各コンテンツを表示
   window.addEventListener('load', function() {
-    const loaded = document.querySelectorAll('.load')
-    loaded.forEach(load => {
-      load.classList.remove('load')
+    const loading = document.querySelectorAll('.loading')
+    loading.forEach(load => {
+      load.classList.remove('loading')
     })
   });
   
@@ -25,8 +25,7 @@
     if(window.scrollY >= 50) {
       fixedLink.classList.add("show");
     } 
-  }
-  );
+  });
 
 
 
@@ -34,7 +33,7 @@
   function showItems() {
     const targets = document.querySelectorAll('.hidden-down, .hidden-right, .hidden-left');
     
-    // showをすると同時に監視を止める
+    // .showを付与すると同時に監視を止める
     function callback(entries, obs) {
       entries.forEach(entry => {
         if(!entry.isIntersecting) {

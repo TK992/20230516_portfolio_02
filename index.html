@@ -32,7 +32,7 @@
 
   <body>
     <!------------ ヘッダー ------------>
-    <header class="header load">
+    <header class="header load hidden-left">
       <div id="link-top" class="header__link-top" href="#link-top">
         <a class="header__shop-name">
           Cafe<br>Sanctuary
@@ -40,7 +40,7 @@
       </div>
 
     <!------------ ローダー ------------>
-    <div id=loader>
+    <div class=loader>
       <div class="loading"></div>
     </div>
       
@@ -52,12 +52,12 @@
  
     
     <!------------ 固定リンク ------------>
-    <div class="fixed-link">
-      <a class="fixed-link__reserve--bgc appear" href="https://epark.jp/shopinfo/fsp578105/?widgetimp=1" target="_blank"><span class="fixed-link__reserve--txt">ＷＥＢ予約</span></a>
-      <a class="fixed-link__telephone appear" href="tel:03-5686-1006"><svg width="18" height="18" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="fixed-link hidden-up">
+      <a class="fixed-link__reserve--bgc" href="https://epark.jp/shopinfo/fsp578105/?widgetimp=1" target="_blank"><span class="fixed-link__reserve--txt">ＷＥＢ予約</span></a>
+      <a class="fixed-link__telephone" href="tel:03-5686-1006"><svg width="18" height="18" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M3.06403 0.829065C3.34838 0.545146 3.68982 0.324899 4.06572 0.182919C4.44163 0.0409389 4.84342 -0.0195318 5.24446 0.00551423C5.6455 0.0305602 6.03664 0.140551 6.39196 0.328197C6.74728 0.515844 7.05867 0.776861 7.30548 1.09395L10.2225 4.84137C10.7571 5.52878 10.9456 6.4242 10.7344 7.26923L9.84547 10.8281C9.79951 11.0125 9.80199 11.2056 9.85268 11.3887C9.90336 11.5717 10.0005 11.7386 10.1347 11.8731L14.1275 15.8659C14.2622 16.0004 14.4293 16.0977 14.6127 16.1484C14.7961 16.1991 14.9895 16.2014 15.1741 16.1551L18.7314 15.2662C19.1484 15.162 19.5837 15.1539 20.0043 15.2425C20.4249 15.3312 20.8198 15.5144 21.1592 15.7781L24.9067 18.6935C26.2539 19.7417 26.3774 21.7324 25.1716 22.9366L23.4912 24.6169C22.2887 25.8195 20.4913 26.3476 18.8159 25.7577C14.5276 24.2489 10.6341 21.7939 7.42411 18.5749C4.2053 15.3654 1.75033 11.4724 0.241276 7.18473C-0.347001 5.5109 0.181149 3.71195 1.3837 2.50939L3.06403 0.829065Z" fill="white"/>
         </svg>TEL</a>
-      <a class="fixed-link__anchor appear" href="#link-top">
+      <a class="fixed-link__anchor" href="#link-top">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="28" height="28" rx="8" fill="#789C87"/>
           <path d="M20 12.7749L14 7L8 12.7749" stroke="white" stroke-width="3.125" stroke-linecap="round" stroke-linejoin="round"/>
@@ -136,7 +136,7 @@
 
     <main class="load">
       <!------------ ファーストビュー ------------>
-      <section class="fv appear">
+      <section class="fv hidden-left">
           <picture class="fv__img-wrapper">
             <source class="fv__img" srcset="img/02_fv/fv_sp1.jpg" media="(max-width: 551px)" type="image/jpg">
             <img class="fv__img" src="img/02_fv/fv_pc1.jpg" alt="ベリー系のワッフル">
@@ -148,12 +148,12 @@
 
       <!------------ store ------------>
       <!-- SP用 -->
-      <section id="link-store" class="store-sp appear">
-        <h2 class="store-sp__title">store</h2>
+      <section id="link-store" class="store-sp">
+        <h2 class="store-sp__title hidden-down">store</h2>
         
         <!-- 内観の紹介 -->
         <!-- 上のコンテナ -->
-        <div class="store-sp__over">
+        <div class="store-sp__over hidden-left">
           <div class="store-sp__over--left">
             <img src="img/03_store/store_table.jpg" alt="内観が広く見渡せる画像">
           </div>
@@ -162,7 +162,7 @@
           </div>
         </div>
         <!-- 下のコンテナ -->
-        <div class="store-sp__under">
+        <div class="store-sp__under hidden-right">
           <div class="store-sp__under--left">
             <p>
               皆様の“Sanctuary“(聖域)に<br>なりますように<br>という願いを込めた空間に
@@ -175,7 +175,7 @@
       </section>
 
       <!-- PC用 -->
-      <section id="link-store" class="store-pc appear">
+      <section id="link-store" class="store-pc hidden-down">
         <h2 class="store-pc__title">store</h2>
         
         <!-- 内観の説明文 -->
@@ -193,7 +193,7 @@
       </section>
 
         <!------------ menu ------------>
-        <section id="link-menu" class="menu appear">
+        <section id="link-menu" class="menu hidden-down">
           <h2 class="menu__title">menu</h2>
 
           <!-- SP用：swiperを使ったカルーセル -->
@@ -265,7 +265,7 @@
         </section>
           
         <!------------ info ------------>
-        <section id="link-info" class="info appear">
+        <section id="link-info" class="info hidden-down">
           <!-- セクションタイトル -->
           <h2 class="info__title">info</h2>
 
@@ -292,7 +292,7 @@
       <div class="bgc">
 
         <!------------ access ------------>
-        <section id="link-access" class="access appear">
+        <section id="link-access" class="access hidden-down">
           <!-- セクションタイトル -->
           <h2 class="access__title">access</h2>
           
@@ -353,26 +353,41 @@
       </div>
         
       <!------------ contact ------------>
-      <section id="link-contact" class="contact appear">
+      <section id="link-contact" class="contact hidden-down">
         <!-- セクションタイトル -->
         <h2 class="contact__title">contact</h2>
         <!-- Web予約ボタン -->
         <a class="contact__reserve" href="https://epark.jp/shopinfo/fsp578105/?widgetimp=1" target="_blank">Web予約はこちら</a>
-        <!-- その他問い合わせフォーム -->
-        <form class="contact__form">
-          <label class="contact__header">■その他お問い合わせ</label>
-          <input class="contact__input" type="text" name="name" placeholder="お名前">
-          <input class="contact__input" type="text" name="email" placeholder="メールアドレス">
-          <input class="contact__input" type="text" name="telephone" placeholder="電話番号">
-          <textarea class="contact__input" type="text" name="content" cols="90" rows="4" placeholder="問い合わせ内容"></textarea>
-        </form>
-        <!-- フォームの送信ボタン -->
-        <input class="contact__submit" type="submit" value="送信する">
+        <!-- 問い合わせフォーム -->
+        <details class="contact__form">
+          <summary class="contact__form-header">メールでのお問い合わせ</summary>
+          
+          <form class="contact__form-wrapper">
+            <label class="contact__form-label">
+              ・名前
+              <input class="contact__form-input" type="text" name="name">
+            </label>
+            <label class="contact__form-label">
+              ・メールアドレス
+              <input class="contact__form-input" type="text" name="email">
+            </label>
+            <label class="contact__form-label">
+              ・電話番号
+              <input class="contact__form-input" type="text" name="telephone">
+            </label>
+            <label class="contact__form-label">
+              ・お問い合わせ内容
+              <textarea class="contact__form-input" type="text" name="content" cols="90" rows="4"></textarea>
+            </label>
+          </form>
+          <!-- フォームの送信ボタン -->
+          <button class="contact__submit" type="submit" value="送信する">送信する</button>
+        </details>
       </section>
     </main>
     
     <!------------ フッター ------------>
-    <footer class="footer load">
+    <footer class="footer">
       <div class="footer__sns">
         <a class="footer__link" href="https://www.instagram.com/cafe.sanctuary/" target="_blank">
           <svg class="footer__icon" width="30" height="30" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -4,7 +4,7 @@
   // ---------- ローディング周りの動き ----------
   // load後にローディングアイコンを削除
   window.addEventListener('load', () => {
-    const loader = document.querySelector('#loader')
+    const loader = document.querySelector('.loader')
     loader.style.display = 'none';
   });
   
@@ -16,12 +16,23 @@
     })
   });
   
+  
+  
+  // ---------- スクロールされたらアンカーリンク表示 ----------
+  window.addEventListener('scroll', function() {
+    const fixedLink = document.querySelector(".fixed-link");
+    
+    if(window.scrollY >= 50) {
+      fixedLink.classList.add("show");
+    } 
+  }
+  );
 
-  
-  
-  // ---------- .appear要素が20％読み込まれたら表示する ----------
-  function appearItems() {
-    const targets = document.querySelectorAll('.appear');
+
+
+  // ---------- .hidden要素が20％読み込まれたら表示する ----------
+  function showItems() {
+    const targets = document.querySelectorAll('.hidden-down, .hidden-right, .hidden-left');
     
     // showをすると同時に監視を止める
     function callback(entries, obs) {
@@ -45,7 +56,7 @@
       observer.observe(target);
     });
   }
-  window.addEventListener('load', appearItems);
+  window.addEventListener('load', showItems);
     
 
 
@@ -60,7 +71,7 @@
   
     // transitionを効かせるためにsetTimeout使用
     setTimeout(() => {
-      menu.classList.add('open');
+      menu.classList.add('active');
     }, 10);
   });
 
@@ -68,7 +79,7 @@
   const menuLink = document.querySelectorAll('.header__nav-sp--link');
   menuLink.forEach(elm => {
       elm.addEventListener('click', ()=> {
-        menu.classList.remove('open');
+        menu.classList.remove('active');
         
         setTimeout(() => {
           menu.style.display = 'none'
@@ -109,7 +120,7 @@
       this.position = position;
       this.viewport = window.innerWidth;
       this.margin = 16;
-      this.interval = 30000;
+      this.interval = 35000;
 
       this.addSlides()
       .sumSlidesWidth()
@@ -149,20 +160,16 @@
       slideWrapper.style.transition = 'none';
       if (position === 'over') {
         slideWrapper.style.transform = 'translateX(0)';
-        console.log(slideWrapper.style.transform)
       } else {
         slideWrapper.style.transform = `translateX(-${parseInt(slideWrapper.style.width) - viewport}px)`;
-        console.log(slideWrapper.style.transform)
       }
       
       setTimeout(() => {
-        slideWrapper.style.transition = 'transform 30s linear';
+        slideWrapper.style.transition = 'transform 35s linear';
         if (position === 'over') {
           slideWrapper.style.transform = `translateX(-${parseInt(slideWrapper.style.width) - viewport}px)`;
-          console.log(slideWrapper.style.transform)
         } else {
           slideWrapper.style.transform = 'translateX(0)';
-          console.log(slideWrapper.style.transform)
         }
       }, 10);
       return this;
@@ -191,17 +198,7 @@
       
       
       
-      
-  
-  
-  
-  
-  
-  
-  
-
-  
-  // photoセクションの画像クリックでモーダルを表示
+  // ---------- 画像クリックでモーダル展開 ----------
   const modal = document.querySelector('.photo__modal');
   const modalImage = document.querySelector('.photo__modal--img');
   const images = document.querySelectorAll('.slide');

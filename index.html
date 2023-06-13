@@ -33,22 +33,9 @@
   <body>
     <!------------ ローダー ------------>
     <div class="loader"></div>
-    <!------------ ヘッダー ------------>
-    <header class="header hidden">
-      <div id="link-top" class="header__link-top" href="#link-top">
-        <a class="header__shop-name">
-          Cafe<br>Sanctuary
-        </a>
-      </div>
-      
-      <!-- ハンバーガーメニューボタン -->
-      <a class="header__button">
-        <svg width="30" height="23" viewBox="0 0 39 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.476181 2.86262C0.156125 2.54797 0 2.14889 0 1.66539C0 1.18189 0.156125 0.782808 0.476181 0.46815C0.796237 0.153492 1.20216 0 1.69396 0H37.306C37.7978 0 38.2038 0.153492 38.5238 0.46815C38.8439 0.782808 39 1.18189 39 1.66539C39 2.14889 38.8439 2.54797 38.5238 2.86262C38.2038 3.17728 37.7978 3.33077 37.306 3.33077H1.69396C1.20216 3.33077 0.796237 3.17728 0.476181 2.86262ZM38.5238 13.8066C38.8439 14.1213 39 14.5203 39 15.0038C39 15.4873 38.8439 15.8864 38.5238 16.2011C38.2038 16.5157 37.7978 16.6692 37.306 16.6692H1.69396C1.20216 16.6692 0.796237 16.5157 0.476181 16.2011C0.156125 15.8864 0 15.4873 0 15.0038C0 14.5203 0.156125 14.1213 0.476181 13.8066C0.796237 13.4919 1.20216 13.3384 1.69396 13.3384H37.306C37.7978 13.3384 38.2038 13.4919 38.5238 13.8066ZM38.5238 27.1374C38.8439 27.452 39 27.8511 39 28.3346C39 28.8181 38.8439 29.2172 38.5238 29.5318C38.2038 29.8465 37.7978 30 37.306 30H1.69396C1.20216 30 0.796237 29.8465 0.476181 29.5318C0.156125 29.2172 0 28.8181 0 28.3346C0 27.8511 0.156125 27.452 0.476181 27.1374C0.796237 26.8227 1.20216 26.6692 1.69396 26.6692H37.306C37.7978 26.6692 38.2038 26.8304 38.5238 27.1374Z" fill="#815B2E"/></svg>
-      </a>
-      <!------------ 固定リンク ------------>
-      <div class="fixed-link">
-        <a class="fixed-link__reserve--bgc" href="https://epark.jp/shopinfo/fsp578105/?widgetimp=1" target="_blank"><span class="fixed-link__reserve--txt">ＷＥＢ予約</span></a>
+    <!------------ 固定リンク ------------>
+    <div class="fixed-link">
+      <a class="fixed-link__reserve--bgc" href="https://epark.jp/shopinfo/fsp578105/?widgetimp=1" target="_blank"><span class="fixed-link__reserve--txt">ＷＥＢ予約</span></a>
       <a class="fixed-link__telephone" href="tel:03-5686-1006"><svg width="18" height="18" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M3.06403 0.829065C3.34838 0.545146 3.68982 0.324899 4.06572 0.182919C4.44163 0.0409389 4.84342 -0.0195318 5.24446 0.00551423C5.6455 0.0305602 6.03664 0.140551 6.39196 0.328197C6.74728 0.515844 7.05867 0.776861 7.30548 1.09395L10.2225 4.84137C10.7571 5.52878 10.9456 6.4242 10.7344 7.26923L9.84547 10.8281C9.79951 11.0125 9.80199 11.2056 9.85268 11.3887C9.90336 11.5717 10.0005 11.7386 10.1347 11.8731L14.1275 15.8659C14.2622 16.0004 14.4293 16.0977 14.6127 16.1484C14.7961 16.1991 14.9895 16.2014 15.1741 16.1551L18.7314 15.2662C19.1484 15.162 19.5837 15.1539 20.0043 15.2425C20.4249 15.3312 20.8198 15.5144 21.1592 15.7781L24.9067 18.6935C26.2539 19.7417 26.3774 21.7324 25.1716 22.9366L23.4912 24.6169C22.2887 25.8195 20.4913 26.3476 18.8159 25.7577C14.5276 24.2489 10.6341 21.7939 7.42411 18.5749C4.2053 15.3654 1.75033 11.4724 0.241276 7.18473C-0.347001 5.5109 0.181149 3.71195 1.3837 2.50939L3.06403 0.829065Z" fill="white"/>
       </svg>TEL</a>
@@ -59,6 +46,15 @@
           <path d="M20 21L14 15.2251L8 21" stroke="white" stroke-width="3.125" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
+    </div> 
+    
+    <!------------ ヘッダー ------------>
+    <header class="header hidden">
+      <!-- ハンバーガーメニューボタン -->
+      <div class="header__button">
+        <svg width="30" height="23" viewBox="0 0 39 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.476181 2.86262C0.156125 2.54797 0 2.14889 0 1.66539C0 1.18189 0.156125 0.782808 0.476181 0.46815C0.796237 0.153492 1.20216 0 1.69396 0H37.306C37.7978 0 38.2038 0.153492 38.5238 0.46815C38.8439 0.782808 39 1.18189 39 1.66539C39 2.14889 38.8439 2.54797 38.5238 2.86262C38.2038 3.17728 37.7978 3.33077 37.306 3.33077H1.69396C1.20216 3.33077 0.796237 3.17728 0.476181 2.86262ZM38.5238 13.8066C38.8439 14.1213 39 14.5203 39 15.0038C39 15.4873 38.8439 15.8864 38.5238 16.2011C38.2038 16.5157 37.7978 16.6692 37.306 16.6692H1.69396C1.20216 16.6692 0.796237 16.5157 0.476181 16.2011C0.156125 15.8864 0 15.4873 0 15.0038C0 14.5203 0.156125 14.1213 0.476181 13.8066C0.796237 13.4919 1.20216 13.3384 1.69396 13.3384H37.306C37.7978 13.3384 38.2038 13.4919 38.5238 13.8066ZM38.5238 27.1374C38.8439 27.452 39 27.8511 39 28.3346C39 28.8181 38.8439 29.2172 38.5238 29.5318C38.2038 29.8465 37.7978 30 37.306 30H1.69396C1.20216 30 0.796237 29.8465 0.476181 29.5318C0.156125 29.2172 0 28.8181 0 28.3346C0 27.8511 0.156125 27.452 0.476181 27.1374C0.796237 26.8227 1.20216 26.6692 1.69396 26.6692H37.306C37.7978 26.6692 38.2038 26.8304 38.5238 27.1374Z" fill="#815B2E"/></svg>
+      </div>
 
       <!-- PC用ナビゲーション -->
       <nav class="header__nav-pc">
@@ -149,21 +145,21 @@
         <!-- 上のコンテナ -->
         <div class="store-sp__over">
           <div class="store-sp__over--left">
-            <img src="img/03_store/store_table.jpg" alt="４人掛けテーブル等の内観">
+            <img class="lazyload" data-src="img/03_store/store_table.jpg" alt="４人掛けテーブル等の内観">
           </div>
           <div class="store-sp__over--right">
             <p>手作りのインテリアが並ぶ<br>アンティーク調の店内</p>
           </div>
         </div>
         <!-- 下のコンテナ -->
-        <div class="store-sp__under hidden">
+        <div class="store-sp__under">
           <div class="store-sp__under--left">
             <p>
               皆様の“Sanctuary“(聖域)に<br>なりますように<br>という願いを込めた空間に
             </p>
           </div>
           <div class="store-sp__under--right">
-            <img src="img/03_store/store_chair.jpg" alt="二人掛けの客席と照明">
+            <img class="lazyload" data-src="img/03_store/store_chair.jpg" alt="二人掛けの客席と照明">
           </div>
         </div>
       </section>
@@ -180,9 +176,9 @@
         </div>
         <!-- 内観の写真 -->
         <div class="store-pc__img">
-          <img class="store-pc__img--item" src="img/03_store/store_table.jpg" alt="内観が広く見渡せる画像">
-          <img class="store-pc__img--item" src="img/03_store/store_chair.jpg" alt="座席と照明">
-          <img class="store-pc__img--item" src="img/03_store/store_shelf_pc.jpg" alt="本棚">
+          <img class="store-pc__img--item lazyload" data-src="img/03_store/store_table.jpg" alt="内観が広く見渡せる画像">
+          <img class="store-pc__img--item lazyload" data-src="img/03_store/store_chair.jpg" alt="座席と照明">
+          <img class="store-pc__img--item lazyload" data-src="img/03_store/store_shelf_pc.jpg" alt="本棚">
         </div>
       </section>
 
@@ -196,19 +192,19 @@
 
               <!-- 1枚目：ワッフル -->
               <div class="swiper-slide">
-                <img class="swiper-slide__img" src="img/04_menu/menu_waffle.jpg" alt="ワッフルの画像">
+                <img class="swiper-slide__img lazyload" data-src="img/04_menu/menu_waffle.jpg" alt="ワッフルの画像">
                 <h3 class="swiper-slide__title waffle">ワッフル</h3>
                 <p class="swiper-slide__txt">一番人気の「季節のワッフル」は<br>イチゴ・杏・マスカット・かぼちゃなど<br>季節ごとに旬の食材をセレクト</p>
               </div>
               <!-- 2枚目：プリン -->
               <div class="swiper-slide">
-                <img class="swiper-slide__img" src="img/04_menu/menu_pudding.jpg" alt="プリンの画像">
+                <img class="swiper-slide__img lazyload" data-src="img/04_menu/menu_pudding.jpg" alt="プリンの画像">
                 <h3 class="swiper-slide__title pudding">プリン</h3>
                 <p class="swiper-slide__txt">生クリームがたっぷりのった<br>むっちりかためのカスタードプリン<br>秋限定「かぼちゃのプリン」も大人気</p>
               </div>
               <!-- 3枚目：コーヒー -->
               <div class="swiper-slide">
-                <img class="swiper-slide__img" src="img/04_menu/menu_coffee.jpg" alt="コーヒーの画像">
+                <img class="swiper-slide__img lazyload" data-src="img/04_menu/menu_coffee.jpg" alt="コーヒーの画像">
                   <h3 class="swiper-slide__title coffee">コーヒー</h3>
                   <p class="swiper-slide__txt">豆からこだわった自家焙煎のコーヒーは<br>注文が入ってから抽出する”淹れたて”<br>看板メニューのスイーツと相性バツグン</p>
               </div>
@@ -229,13 +225,13 @@
                 <p class="menu-pc__txt">一番人気の「季節のワッフル」は<br>イチゴ・杏・マスカット・かぼちゃなど<br>季節ごとに旬の食材をセレクト</p>
               </div>
               <div class="menu-pc__right">
-                <img class="menu-pc__img" src="img/04_menu/menu_waffle_pc.jpg" alt="ワッフルの画像">
+                <img class="menu-pc__img lazyload" data-src="img/04_menu/menu_waffle_pc.jpg" alt="ワッフルの画像">
               </div>
             </div>
             <!-- 2枚目：プリン -->
             <div class="menu-pc__bgc">
               <div class="menu-pc__right">
-                <img class="menu-pc__img" src="img/04_menu/menu_pudding_pc.jpg" alt="プリンの画像">
+                <img class="menu-pc__img lazyload" data-src="img/04_menu/menu_pudding_pc.jpg" alt="プリンの画像">
               </div>
               <div class="menu-pc__left">
                 <h3 class="menu-pc__title pudding-pc">プリン</h3>
@@ -249,7 +245,7 @@
                 <p class="menu-pc__txt">豆からこだわった自家焙煎のコーヒーは<br>注文が入ってから抽出する”淹れたて”<br>看板メニューのスイーツと相性バツグン</p>
               </div>
               <div class="menu-pc__right">
-                <img class="menu-pc__img" src="img/04_menu/menu_coffee.jpg" alt="コーヒーの画像">
+                <img class="menu-pc__img lazyload" data-src="img/04_menu/menu_coffee.jpg" alt="コーヒーの画像">
               </div>
             </div>
             <a class="menu__link" href="#" target="_blank">
@@ -266,7 +262,7 @@
           <div class="info__wrapper hidden">
             <!-- 外観の写真 -->
             <div class="info__img">
-              <img class="info__img--img" src="img/05_info/exterior.jpg" alt="外観">
+              <img class="info__img--img lazyload" data-src="img/05_info/exterior.jpg" alt="外観">
             </div>
             <!-- 営業時間 -->
             <ul class="info__list">
@@ -294,11 +290,9 @@
             <!-- 最寄駅からの所要時間 -->
             <p class="access__detail">東武スカイツリーライン「西新井」駅&emsp;徒歩5分</p>
             <!-- Googleマップ -->
-            <iframe class="access__map hidden" title="google-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3236.8397829114033!2d139.78781415686936!3d35.77931177794534!3m2!1i1024!2i768!4f27!3m3!1m2!1s0x601891e94569bfad%3A0x4221b87f2274e3d9!2z44Kr44OV44Kn44O744K144Oz44Kv44OB44Ol44Ki44Oq!5e0!3m2!1sja!2sjp!4v1677433442256!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="access__map hidden lazyload" title="google-map" data-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3236.8397829114033!2d139.78781415686936!3d35.77931177794534!3m2!1i1024!2i768!4f27!3m3!1m2!1s0x601891e94569bfad%3A0x4221b87f2274e3d9!2z44Kr44OV44Kn44O744K144Oz44Kv44OB44Ol44Ki44Oq!5e0!3m2!1sja!2sjp!4v1677433442256!5m2!1sja!2sjp" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-          
         </section>
-        
 
         <!------------ photo ------------>
         <section id="link-photo" class="photo">
@@ -315,39 +309,39 @@
             <div class="photo__wrapper--over">
             
               <!-- スライドアニメーション：上段前半6枚 -->
-                <img class="photo__slide--img slide" src="img/07_photo/pudding_pumpkin.jpeg" width="90" data-src="img/07_photo/pudding_pumpkin.jpeg" alt="かぼちゃプリン">
-                <img class="photo__slide--img slide" src="img/07_photo/interior2.jpg" data-src="img/07_photo/interior2.jpg" alt="二人掛けの客席">
-                <img class="photo__slide--img slide" src="img/07_photo/waffle_strawberry.jpg" data-src="img/07_photo/waffle_strawberry.jpg" alt="いちごのワッフル">
-                <img class="photo__slide--img slide" src="img/07_photo/tea_earlgrey.jpeg" data-src="img/07_photo/tea_earlgrey.jpeg" alt="ホットコーヒー">
-                <img class="photo__slide--img slide" src="img/07_photo/scone.jpeg" data-src="img/07_photo/scone.jpeg" alt="スコーン">
-                <img class="photo__slide--img slide" src="img/07_photo/exterior2.jpg" data-src="img/07_photo/exterior2.jpg" alt="外観">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/pudding_pumpkin.jpeg" width="90" data-src="img/07_photo/pudding_pumpkin.jpeg" alt="かぼちゃプリン">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/interior2.jpg" data-src="img/07_photo/interior2.jpg" alt="二人掛けの客席">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/waffle_strawberry.jpg" data-src="img/07_photo/waffle_strawberry.jpg" alt="いちごのワッフル">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/tea_earlgrey.jpeg" data-src="img/07_photo/tea_earlgrey.jpeg" alt="ホットコーヒー">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/scone.jpeg" data-src="img/07_photo/scone.jpeg" alt="スコーン">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/exterior2.jpg" data-src="img/07_photo/exterior2.jpg" alt="外観">
   
               <!-- スライドアニメーション：上段後半6枚 -->
-                <img class="photo__slide--img slide" src="img/07_photo/waffle_chestnut.jpeg" data-src="img/07_photo/waffle_chestnut.jpeg" alt="栗のワッフル">
-                <img class="photo__slide--img slide" src="img/07_photo/lemonsquash.jpeg" data-src="img/07_photo/lemonsquash.jpeg" alt="レモンスカッシュ">
-                <img class="photo__slide--img slide" src="img/07_photo/shopname.jpeg" data-src="img/07_photo/shopname.jpeg" alt="店名の看板">
-                <img class="photo__slide--img slide" src="img/07_photo/waffle_muscut.jpeg" data-src="img/07_photo/waffle_muscut.jpeg" alt="マスカットのワッフル">
-                <img class="photo__slide--img slide" src="img/07_photo/sand.jpeg" data-src="img/07_photo/sand.jpeg" alt="サンド">
-                <img class="photo__slide--img slide" src="img/07_photo/interior1.jpeg" data-src="img/07_photo/interior1.jpeg" alt="店内から入り口">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/waffle_chestnut.jpeg" data-src="img/07_photo/waffle_chestnut.jpeg" alt="栗のワッフル">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/lemonsquash.jpeg" data-src="img/07_photo/lemonsquash.jpeg" alt="レモンスカッシュ">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/shopname.jpeg" data-src="img/07_photo/shopname.jpeg" alt="店名の看板">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/waffle_muscut.jpeg" data-src="img/07_photo/waffle_muscut.jpeg" alt="マスカットのワッフル">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/sand.jpeg" data-src="img/07_photo/sand.jpeg" alt="サンド">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/interior1.jpeg" data-src="img/07_photo/interior1.jpeg" alt="店内から入り口">
             </div>
   
             <!-- スライドアニメーション下段 -->
             <div class="photo__wrapper--under">
               <!-- スライドアニメーション：下段後半6枚 -->
-                <img class="photo__slide--img slide" src="img/07_photo/interior3.jpg" width="90" data-src="img/07_photo/interior3.jpg" alt="カトラリー">
-                <img class="photo__slide--img slide" src="img/07_photo/coffeejelly.jpeg" data-src="img/07_photo/coffeejelly.jpeg" alt="コーヒーゼリー">
-                <img class="photo__slide--img slide" src="img/07_photo/quiche.jpeg" data-src="img/07_photo/quiche.jpeg" alt="キッシュ">
-                <img class="photo__slide--img slide" src="img/07_photo/interior5.jpg" data-src="img/07_photo/interior5.jpg" alt="丸テーブルの客席">
-                <img class="photo__slide--img slide" src="img/07_photo/tea.jpeg" data-src="img/07_photo/tea.jpeg" alt="ホットティー">
-                <img class="photo__slide--img slide" src="img/07_photo/waffle_orange.jpeg" data-src="img/07_photo/waffle_orange.jpeg" alt="オレンジのワッフル">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/interior3.jpg" width="90" data-src="img/07_photo/interior3.jpg" alt="カトラリー">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/coffeejelly.jpeg" data-src="img/07_photo/coffeejelly.jpeg" alt="コーヒーゼリー">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/quiche.jpeg" data-src="img/07_photo/quiche.jpeg" alt="キッシュ">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/interior5.jpg" data-src="img/07_photo/interior5.jpg" alt="丸テーブルの客席">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/tea.jpeg" data-src="img/07_photo/tea.jpeg" alt="ホットティー">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/waffle_orange.jpeg" data-src="img/07_photo/waffle_orange.jpeg" alt="オレンジのワッフル">
     
               <!-- スライドアニメーション：下段前半6枚 -->
-                <img class="photo__slide--img slide" src="img/07_photo/interior4.jpg" data-src="img/07_photo/interior4.jpg" alt="4人掛けのテーブル席">
-                <img class="photo__slide--img slide" src="img/07_photo/waffle_banana.jpeg" data-src="img/07_photo/waffle_banana.jpeg" alt="バナナのワッフル">
-                <img class="photo__slide--img slide" src="img/07_photo/cake_blueberry.jpeg" data-src="img/07_photo/cake_blueberry.jpeg" alt="ブルーベリーチーズケーキ">
-                <img class="photo__slide--img slide" src="img/07_photo/interior6.jpg" data-src="img/07_photo/interior6.jpg" alt="店内の照明">
-                <img class="photo__slide--img slide" src="img/07_photo/waffle_chrismas.jpeg" data-src="img/07_photo/waffle_chrismas.jpeg" alt="クリスマスワッフル">
-                <img class="photo__slide--img slide" src="img/07_photo/coffee_float.jpeg" data-src="img/07_photo/coffee_float.jpeg" alt="コーヒーフロート">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/interior4.jpg" data-src="img/07_photo/interior4.jpg" alt="4人掛けのテーブル席">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/waffle_banana.jpeg" data-src="img/07_photo/waffle_banana.jpeg" alt="バナナのワッフル">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/cake_blueberry.jpeg" data-src="img/07_photo/cake_blueberry.jpeg" alt="ブルーベリーチーズケーキ">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/interior6.jpg" data-src="img/07_photo/interior6.jpg" alt="店内の照明">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/waffle_chrismas.jpeg" data-src="img/07_photo/waffle_chrismas.jpeg" alt="クリスマスワッフル">
+                <img class="photo__slide--img slide lazyload" data-src="img/07_photo/coffee_float.jpeg" data-src="img/07_photo/coffee_float.jpeg" alt="コーヒーフロート">
             </div>
           </div>
         </section>
@@ -414,5 +408,6 @@
 
     <!------------ scriptタグ ------------>
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js"></script>
     <script defer src="js/main.js"></script>
   </body>

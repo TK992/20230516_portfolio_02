@@ -11,7 +11,7 @@
   // load後に各コンテンツの非表示を解除・Fvを表示
   window.addEventListener('load', function() {
     const loading = document.querySelectorAll('.loading')
-    const fv = document.querySelectorAll('.fv .hidden')
+    const fv = document.querySelectorAll('.fv .hidden, .header .hidden')
     
     loading.forEach(elm => {
       elm.classList.remove("loading");
@@ -29,13 +29,13 @@
   // ---------- 100px以上スクロールされたら表示 ----------
   window.addEventListener('scroll', function() {
     const fixedLink = document.querySelector(".fixed-link");
-    const storeOver = document.querySelectorAll(".store-sp__title, .store-sp__over");
+    const storeSection = document.querySelectorAll(".store-sp__title, .store-sp__over, .store-sp__under");
     
-    if(window.scrollY >= 50) {
+    if(window.scrollY >= 10) {
       fixedLink.classList.add("show");
       fixedLink.style.opacity = 0.8;
 
-      storeOver.forEach(elm => {
+      storeSection.forEach(elm => {
         elm.classList.add("show")
       });
     };
@@ -60,7 +60,7 @@
     };
 
     // 読み込みを監視
-    const options = { threshold:0.5 };
+    const options = { threshold:0.4 };
     const observer = new IntersectionObserver(callback, options);
     hiddenItems.forEach(hiddenItem => {
       observer.observe(hiddenItem);
@@ -197,12 +197,12 @@
 
 
 
-
   // ---------- 画像クリックでモーダル展開 ----------
   const modal = document.querySelector('.photo__modal');
   const modalImage = document.querySelector('.photo__modal--img');
   const images = document.querySelectorAll('.slide');
 
+  // 画像をモーダルに入れて表示
   images.forEach((image) => {
     image.addEventListener('click', () => {
       modal.classList.add('showModal');
@@ -212,7 +212,8 @@
       modalImage.src = imageSrc;
     });
   });
-        
+
+  // 画像以外の部分をクリックしたらモーダルを閉じる
   modal.addEventListener('click', () => {
     if (modal.classList.contains('showModal')) {
       modal.classList.remove('showModal');

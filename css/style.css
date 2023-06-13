@@ -101,36 +101,11 @@ body {
 .header {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
   width: 100%;
   height: 62px;
   transition: 1s ease-out 1.5s;
-}
-
-.header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 96%;
-  height: 2px;
-  background-color: #815B2E;
-}
-
-.header__link-top {
-  display: inline-block;
-  margin-left: 2%;
-  text-align: left;
-}
-
-.header__shop-name {
-  text-align: center;
-  display: block;
-  text-decoration: none;
-  font-family: "Shantell Sans";
-  font-size: 20px;
-  line-height: 0.9;
 }
 
 .header__button {
@@ -151,7 +126,7 @@ body {
   gap: 6%;
   width: 100vw;
   height: 100vh;
-  background-color: #F0D8C1;
+  background-color: #FFEFE0;
   z-index: 2;
   transform: translateX(100vw);
   opacity: 0;
@@ -373,7 +348,7 @@ body {
 .store-sp__title {
   position: relative;
   margin-top: 64px;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
   font-size: 24px;
   visibility: hidden;
   opacity: 0;
@@ -438,6 +413,8 @@ body {
 .store-sp__under {
   display: flex;
   margin-top: 32px;
+  visibility: hidden;
+  opacity: 0;
   transform: translateY(40px);
   transition: 1s ease-out;
 }
@@ -484,7 +461,7 @@ body {
 .menu__title {
   position: relative;
   margin-top: 64px;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
   font-size: 24px;
   transform: translateY(40px);
   transition: 1s ease-out;
@@ -615,7 +592,7 @@ body {
 .info__title {
   position: relative;
   margin-top: 64px;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
   font-size: 24px;
   transform: translateY(40px);
   transition: 1s ease-out;
@@ -731,7 +708,7 @@ body {
   position: relative;
   display: block;
   margin-top: 88px;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
   font-size: 24px;
   transform: translateY(40px);
   transition: 1s ease-out;
@@ -777,7 +754,7 @@ body {
   position: relative;
   display: block;
   margin-top: 64px;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
   font-size: 24px;
   transform: translateY(40px);
   transition: 1s ease-out;
@@ -845,6 +822,7 @@ body {
 .slide {
   margin-right: 16px;
   width: 90px;
+  height: 90px;
   cursor: pointer;
 }
 
@@ -854,7 +832,7 @@ body {
 
 .contact__title {
   position: relative;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
   font-size: 24px;
   transform: translateY(40px);
   transition: 1s ease-out;
@@ -912,16 +890,12 @@ body {
 
 .contact__form-input {
   display: block;
-  width: 50%;
-  line-height: 2;
+  width: 84%;
+  line-height: 1.5;
   margin-left: 4%;
   padding-left: 4px;
   background-color: #fff;
   border-radius: 4px;
-}
-
-.contact__form-label:nth-child(4) .contact__form-input {
-  width: 84%;
   resize: vertical;
 }
 

@@ -2,12 +2,13 @@
 
 // ----------- ヘッダー ----------
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   width: 100%;
   height: 62px;
+  transition: $tsMedium ease-out $tsLong;
 }
 
   // ヘッダーの下線
@@ -50,18 +51,20 @@
 
 // SP用ナビゲーションメニュー
 .header__nav-sp {
+  position: absolute;
   display: none;
   flex-direction: column;
+  align-items: flex-end;
   top: 0;
   padding-top: 15%;
   gap: 6%;
-  transform: translateX(100vw);
   width: 100vw;
   height: 100vh;
-  transition: 0.3s;
-  opacity: 0;
-  z-index: 2;
   background-color: $cBeige;
+  z-index: 2;
+  transform: translateX(100vw);
+  opacity: 0;
+  transition: $tsShort ease-out;
 }
 
 // 「close」ボタン
@@ -73,9 +76,9 @@
 
 // 各セクションへのリンク
 .header__nav-sp--link {
-  text-align: left;
-  width: fit-content;
-  margin-left: 25%;
+  text-align: right;
+  display: inline-block;
+  padding-right: 20%;
   text-decoration: underline;
   color: $cGreen;
   font-size: 20px;
@@ -85,17 +88,18 @@
 .header__nav-sp--sns {
   display: flex;
   position: relative;
-  margin-left: 25%;
+  padding-right: 30%;
   padding-bottom: 4%;
-  gap: 6%;
+  gap: 20%;
 }
 
 // SNSアイコンの下線
 .header__nav-sp--sns::after {
   content: '';
   position: absolute;
+  right: 0;
   bottom: 0;
-  width: 100%;
+  width: 120%;
   height: 1px;
   background-color: $cGreen;
 }
@@ -113,8 +117,10 @@
   top: 80px;
   right: 0;
   width: 30px;
-  opacity: 0.8;
+  visibility: hidden;
+  opacity: 0;
   z-index: 1;
+  transition: $tsMedium ease-out;
 }
 
 // 「WEB予約」ボタンのコンテナ

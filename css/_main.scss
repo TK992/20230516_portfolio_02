@@ -4,31 +4,47 @@
 .fv {
   position: relative;
   text-align: left;
+  width: 100%;
+  height: 100%;
 }
 
+// 画像のコンテナ
+.fv__img-wrapper {
+  display: inline-block;
+  width: 90%;
+  height: 100%;
+  margin-top: 32px;
+  overflow: hidden;
+  transform: translateX(-40vw);
+  transition: transform $tsLong ease-out,
+              opacity $tsLong ease-out;
+}
+
+// 画像
+.fv__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 18px 0 0;
+  transform: scale(1.4);
+  transition: $tsLong ease-out;
+}
+
+// テキストのコンテナ
 .fv__title-wrapper {
   position: absolute;
   top: 74%;
   left: 4%;
   width: 85%;
   text-align: right;
+  transform: translateX(-10vw);
+  transition: $tsMedium ease-out $tsMedium;
 }
 
+// テキスト
 .fv__title {
   color: $cWhite;
   font-size: clamp(1rem, 2.6vw + 0.5rem, 2.5rem);
   line-height: 1.5;
-}
-
-.fv__img-wrapper {
-  display: inline-block;
-  width: 90%;
-  margin-top: 32px;
-}
-
-.fv__img {
-  width: 100%;
-  border-radius: 0 18px 0 0;
 }
 
 
@@ -42,9 +58,13 @@
 // セクションタイトル
 .store-sp__title {
   position: relative;
-  padding-top: 64px;
-  padding-bottom: 24px;
+  margin-top: 64px;
+  margin-bottom: 24px;
   font-size: 24px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
 
 // セクションタイトルの下線
@@ -62,6 +82,10 @@
 .store-sp__over {
   display: flex;
   margin-top: 32px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
 
 // 上段：写真側のコンテナ
@@ -107,6 +131,8 @@
 .store-sp__under {
   display: flex;
   margin-top: 32px;
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
 
 // 下段：説明文側のコンテナ
@@ -159,9 +185,11 @@
 // セクションタイトル
 .menu__title {
   position: relative;
-  padding-top: 64px;
-  padding-bottom: 24px;
+  margin-top: 64px;
+  margin-bottom: 24px;
   font-size: 24px;
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
 
 // セクションタイトルの下線
@@ -179,6 +207,8 @@
 .swiper {
   position: relative;
   z-index: 0;
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
 
 // カルーセルのコンテナ
@@ -304,8 +334,10 @@
 .info__title {
   position: relative;
   margin-top: 64px;
-  padding-bottom: 24px;
+  margin-bottom: 24px;
   font-size: 24px;
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
 
 // セクションタイトルの下線
@@ -324,6 +356,8 @@
 .info__wrapper {
   display: flex;
   margin-top: 32px;
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
 
 // 外観の写真のコンテナ
@@ -346,7 +380,7 @@
   width: 110%;
   border-radius: 50% 15% 50% 30%;
   box-shadow:
-  inset 16px 12px 12px 12px $cCream, inset 0 -8px 8px 8px $cCream;
+  inset 8px 24px 24px 24px $cCream, inset 0 -16px 12px 16px $cCream;
 }
 
 // 外観の写真
@@ -365,7 +399,7 @@
   text-align: left;
   width: 46%;
   list-style: none;
-  line-height: 1;
+  // line-height: 1;
   margin-left: 6%;
   font-weight: normal;
 }
@@ -380,13 +414,13 @@
 
 // 「電話番号」上のみに余白
 .info__list--header:nth-of-type(7) {
-  margin-top: 14%;
+  margin-top: 12%;
 }
 
 // 各リスト要素
 .info__list--item {
   font-size: 14px;
-  line-height: 1.3;
+  line-height: 1.5;
   margin-left: 6%;
 }
 
@@ -397,9 +431,10 @@
 
 .info__list--last-order {
   margin-bottom: 4%;
-  margin-left: 36%;
+  margin-left: 30%;
   font-size: 14px;
 }
+
 
 
 // ----------- オレンジの背景 ----------
@@ -413,13 +448,13 @@
   content: '';
   position: absolute;
   top: 24px;
-  left: -152px;
+  left: -154px;
   border-radius: 50%;
   width: 1104px;
-  height: 791px;
+  height: 832px;
   z-index: -1;
   background-image: linear-gradient(
-    150deg,
+    135deg,
     hsl(23deg 100% 77%) 0%,
     hsl(17deg 91% 74%) 24%,
     hsl(11deg 83% 70%) 35%,
@@ -439,10 +474,17 @@
 .access__title {
   position: relative;
   display: block;
-  margin-top: 96px;
-  padding-bottom: 24px;
+  margin-top: 88px;
+  margin-bottom: 24px;
   font-size: 24px;
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
+
+.access__wrapper {
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
+} 
 
 // セクションタイトルの下線
 .access__title::after {
@@ -465,17 +507,20 @@
   font-weight: normal;
 }
 
+// Googleマップ
 .access__map {
-  width: 96%;
+  width: 90%;
   height: 250px;
+  border-radius: 20px;
 }
+
 
 
 // ----------- photo ----------
 .photo {
   position: relative;
   color: $cWhite;
-  padding-bottom: 96px;
+  margin-bottom: 88px;
 }
 
 // セクションタイトル
@@ -483,8 +528,10 @@
   position: relative;
   display: block;
   margin-top: 64px;
-  padding-bottom: 24px;
+  margin-bottom: 24px;
   font-size: 24px;
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
 
 // セクションタイトルの下線
@@ -499,18 +546,28 @@
   background-color: $cWhite;
 }
 
+// スライドアニメーション全体のコンテナ
+.photo__wrapper {
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
+}
+
 // スライドアニメーションのコンテナ上段
 .photo__wrapper--over {
   display: flex;
   margin-top: 32px;
   overflow: hidden;
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
 
 // スライドアニメーションのコンテナ下段
 .photo__wrapper--under {
   display: flex;
-  margin-top: 32px;
+  margin-top: 24px;
   overflow: hidden;
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
 
 // モーダルの背景部分
@@ -545,7 +602,7 @@
 // 各スライド
 .slide {
   margin-right: 16px;
-  width: 70px;
+  width: 90px;
   cursor: pointer;
 }
 
@@ -559,8 +616,10 @@
 // セクションタイトル
 .contact__title {
   position: relative;
-  padding-bottom: 24px;
+  margin-bottom: 24px;
   font-size: 24px;
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
 
 // セクションタイトルの下線
@@ -573,6 +632,11 @@
   width: 24px;
   height: 1px;
   background-color: $cBrown;
+}
+
+.contact__wrapper {
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
 }
 
 // Web予約ボタン
@@ -592,8 +656,6 @@
 
 // お問い合わせフォームのコンテナ
 .contact__form {
-  display: flex;
-  flex-direction: column;
   text-align: left;
   margin-left: 5%;
 }
@@ -606,14 +668,13 @@
 
 // お問い合せフォームの入力部分
 .contact__form-wrapper {
-  gap: 8px;
   font-weight: normal;
   margin-right: auto;
   transition: 0.4s;
 }
 
 .contact__form-label {
-  line-height: 2;
+  line-height: 2.5;
 }
 
 // フォームの入力部分
@@ -623,8 +684,8 @@
   line-height: 2;
   margin-left: 4%;
   padding-left: 4px;
-  border-bottom: solid 1px $cShadow;
   background-color: #fff;
+  border-radius: 4px;
 }
 
 // 入力部分の最終欄は幅を広くする
@@ -636,10 +697,9 @@
 // 送信ボタン
 .contact__submit {
   display: block;
-  margin-top: 32px;
+  margin-top: 24px;
   margin-right: auto;
   margin-left: auto;
-  display: inline-block;
   width: 40%;
   height: auto;
   line-height: 2.5;

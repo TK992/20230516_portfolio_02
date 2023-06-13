@@ -8,51 +8,62 @@
     loader.style.display = 'none';
   });
   
-  // load後に各コンテンツを表示
+  // load後に各コンテンツの非表示を解除・Fvを表示
   window.addEventListener('load', function() {
     const loading = document.querySelectorAll('.loading')
-    loading.forEach(load => {
-      load.classList.remove('loading')
+    const fv = document.querySelectorAll('.fv .hidden')
+    
+    loading.forEach(elm => {
+      elm.classList.remove("loading");
     })
+
+    setTimeout(() => {
+      fv.forEach(elm => {
+        elm.classList.add("show");
+      }, 10);
+    });
   });
   
   
   
-  // ---------- スクロールされたらアンカーリンク表示 ----------
+  // ---------- 100px以上スクロールされたら表示 ----------
   window.addEventListener('scroll', function() {
     const fixedLink = document.querySelector(".fixed-link");
+    const storeOver = document.querySelectorAll(".store-sp__title, .store-sp__over");
     
     if(window.scrollY >= 50) {
       fixedLink.classList.add("show");
-    } 
+      fixedLink.style.opacity = 0.8;
+
+      storeOver.forEach(elm => {
+        elm.classList.add("show")
+      });
+    };
   });
 
 
 
-  // ---------- .hidden要素が20％読み込まれたら表示する ----------
+  // ---------- .hidden要素が画面内に入ったら表示 ----------
   function showItems() {
-    const targets = document.querySelectorAll('.hidden-down, .hidden-right, .hidden-left');
+    const hiddenItems = document.querySelectorAll('.hidden');
     
     // .showを付与すると同時に監視を止める
-    function callback(entries, obs) {
+    function callback(entries, observer) {
       entries.forEach(entry => {
-        if(!entry.isIntersecting) {
-          return;
+        if(entry.isIntersecting) {
+          entry.target.classList.add('show')
+          observer.unobserve(entry.target);
         } else {
-          entry.target.classList.add('show');
-          obs.unobserve(entry.target)
+          return;
         }
-      }
-    )};
-      
-    // 20%の読み込みを監視
-    const options = {
-      threshold: 0.2,
+      });
     };
-    
+
+    // 読み込みを監視
+    const options = { threshold:0.5 };
     const observer = new IntersectionObserver(callback, options);
-    targets.forEach(target => {
-      observer.observe(target);
+    hiddenItems.forEach(hiddenItem => {
+      observer.observe(hiddenItem);
     });
   }
   window.addEventListener('load', showItems);
@@ -82,7 +93,7 @@
         
         setTimeout(() => {
           menu.style.display = 'none'
-        }, 310);
+        }, 500);
     });
   });
 
@@ -90,7 +101,7 @@
 
 
   // ---------- Swiperの設定 ----------
-  // fadeでじんわりスライド
+  // スライド時にfadeをかける
   const swiper = new Swiper('.swiper', {
     effect: 'fade',
     fadeEffect: {
@@ -119,7 +130,7 @@
       this.position = position;
       this.viewport = window.innerWidth;
       this.margin = 16;
-      this.interval = 35000;
+      this.interval = 40000;
 
       this.addSlides()
       .sumSlidesWidth()
@@ -147,12 +158,11 @@
       const slides = this.slideWrapper.children;
       const slideWidth = slides[0].width;
     
-      // スライドショーの横幅
       this.slideWrapper.style.width = `${(slideWidth + this.margin) * (slides.length)}px`;
       return this;
     }
     
-    // スライドショーを動かす関数
+    // 一定間隔でスライドショーをループする
     loopSlides() {
       const {slideWrapper, position, viewport} = this;
 
@@ -164,7 +174,7 @@
       }
       
       setTimeout(() => {
-        slideWrapper.style.transition = 'transform 35s linear';
+        slideWrapper.style.transition = 'transform 40s linear';
         if (position === 'over') {
           slideWrapper.style.transform = `translateX(-${parseInt(slideWrapper.style.width) - viewport}px)`;
         } else {
@@ -184,19 +194,10 @@
     hookName: '.photo__wrapper--under',
     position: 'under',
   });
-    
-  // slides.style.transition = 'none';
-  // slides.style.transform = `translateX({slideshowWidth * start + firstViewportWidth}px)`;
-  
-  // setTimeout(() => {
-  //   slides.style.transition = 'transform 30s linear';
-  //   slides.style.transform = `translateX({slideshowWidth * $end + $secondViewportWidth}px)`;
-  // }, 10);
-    
-      
-      
-      
-      
+
+
+
+
   // ---------- 画像クリックでモーダル展開 ----------
   const modal = document.querySelector('.photo__modal');
   const modalImage = document.querySelector('.photo__modal--img');

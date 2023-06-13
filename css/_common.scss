@@ -1,4 +1,4 @@
-// 配色
+// ----------- 配色 ----------
 $cGreen: #789C87;
 $cPink: #d77171;
 $cOrange: #FFB88C;
@@ -9,6 +9,14 @@ $cBlack: #565656;
 $cBrown: #815B2E;
 $cGray: #484848;
 $cShadow: #b2b2b2;
+
+// ----------- transition ----------
+$tsShort: 0.5s;
+$tsMedium: 1s;
+$tsLong: 1.5s;
+$tfSmall: 20px;
+$tfMedium: 40px;
+$tfLarge: 60px;
 
 // ----------- 基本スタイル ----------
 
@@ -60,14 +68,14 @@ body {
   align-items: center;
   width: 100%;
   height: 100vh;
-  animation: loading 2s infinite;
+  animation: loading $tsLong infinite;
 }
   
 .loader::before {
   content: 'Loading...';
   font-family: 'Shantell Sans';
   background-repeat: no-repeat;
-  animation: loading-before 2s infinite;
+  animation: loading-before $tsLong infinite;
 }
 
 @keyframes loading {
@@ -79,31 +87,40 @@ body {
   display: none;
 }
 
+// .loaded {
+//   opacity: 0;
+//   visibility: hidden;
+// }
 
 
 
 // ----------- 要素を消しておく ----------
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 // 上方向に
 .hidden-up {
   opacity: 0;
-  transform: translateY(-20px);
   visibility: hidden;
+  transform: translateY(-20px);
   transition: all 0.5s;
 }
 
 // 右方向に
 .hidden-right {
   opacity: 0;
-  transform: translateX(20px);
   visibility: hidden;
+  transform: translateX(20px);
   transition: all 0.5s;
 }
 
 // 下方向に
 .hidden-down {
   opacity: 0;
-  transform: translateY(20px);
   visibility: hidden;
+  transform: translateY(20px);
   transition: all 0.5s;
 }
 

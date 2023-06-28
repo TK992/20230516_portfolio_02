@@ -1,4 +1,4 @@
-@use "common" as *;
+@use "base" as *;
 
 // ----------- ファーストビュー ----------
 .fv {
@@ -10,21 +10,24 @@
 
 // 画像のコンテナ
 .fv__img-wrapper {
-  display: inline-block;
+  display: block;
   width: 90%;
   height: 100%;
   margin-top: 32px;
   overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
   transform: translateX(-40vw);
-  transition: transform $tsLong ease-out,
-              opacity $tsLong ease-out;
+  transition: $tsLong ease-out;
 }
 
 // 画像
 .fv__img {
   width: 100%;
   height: 100%;
-  border-radius: 0 18px 0 0;
+  border-radius: 0 16px 0 0;
+  visibility: hidden;
+  opacity: 0;
   transform: scale(1.4);
   transition: $tsLong ease-out;
 }
@@ -33,9 +36,11 @@
 .fv__title-wrapper {
   position: absolute;
   top: 74%;
-  left: 4%;
-  width: 85%;
+  left: 3%;
+  width: 86%;
   text-align: right;
+  visibility: hidden;
+  opacity: 0;
   transform: translateX(-10vw);
   transition: $tsMedium ease-out $tsMedium;
 }
@@ -55,60 +60,76 @@
   display: none;
 }
 
-// セクションタイトル
-.store-sp__title {
-  position: relative;
-  margin-top: 64px;
-  padding-bottom: 24px;
-  font-size: 24px;
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY($tfMedium);
-  transition: $tsMedium ease-out;
+.store-sp {
+  text-align: unset;
 }
 
-// セクションタイトルの下線
-.store-sp__title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: calc(50% - 12px);
-  width: 24px;
-  height: 1px;
-  background-color: $cBrown;
-}
+// // セクションタイトル
+// .store-sp__title {
+//   position: relative;
+//   margin-top: 80px;
+//   padding-bottom: 24px;
+//   font-size: 24px;
+//   visibility: hidden;
+//   opacity: 0;
+//   transform: translateY($tfMedium);
+//   transition: $tsLong ease-out $tsLong;
+// }
+
+// // セクションタイトルの下線
+// .store-sp__title::after {
+//   content: '';
+//   position: absolute;
+//   bottom: 0;
+//   left: calc(50% - 12px);
+//   width: 24px;
+//   height: 1px;
+//   background-color: $cBrown;
+// }
 
 // 上段のコンテナ
 .store-sp__over {
   display: flex;
-  margin-top: 32px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  margin-right: 22%;
+  width: 78%;
   visibility: hidden;
   opacity: 0;
   transform: translateY($tfMedium);
-  transition: $tsMedium ease-out;
+  transition: $tsLong ease-out $tsLong;
 }
 
-// 上段：写真側のコンテナ
-.store-sp__over--left {
+// 上段：説明文側のコンテナ
+.store-sp__over--txt {
+  margin-bottom: 16px;
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+// 上段：写真のコンテナ
+.store-sp__over--img {
   position: relative;
-  margin-right: 2%;
-  margin-left: 2%;
-  width: 46%;
+  margin-right: 16px;
+  width: 198px;
+  height: auto;
 }
 
 // 上段：写真
-.store-sp__over--left img {
+.store-sp__over--img img {
+  display: block;
   width: 100%;
   height: 100%;
   border-radius: 0 0 12px 0;
 }
 
 // 上段：写真の背景色
-.store-sp__over--left::after {
+.store-sp__over--img::after {
   content: '';
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 16px;
+  left: 16px;
   width: 100%;
   height: 100%;
   background-color: $cBeige;
@@ -116,63 +137,51 @@
   z-index: -1;
 }
 
-// 上段：説明文側のコンテナ
-.store-sp__over--right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.8;
-}
-
 // 下段のコンテナ
 .store-sp__under {
   display: flex;
-  margin-top: 32px;
-  visibility: hidden;
-  opacity: 0;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 48px;
+  margin-left: 22%;
+  width: 78%;
   transform: translateY($tfMedium);
   transition: $tsMedium ease-out;
 }
 
 // 下段：説明文側のコンテナ
-.store-sp__under--left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  font-size: 14px;
+.store-sp__under--txt {
+  margin-bottom: 32px; /* 写真のafter要素分の16pxを加味 */
   font-weight: normal;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 // 下段：写真側のコンテナ
-.store-sp__under--right {
+.store-sp__under--img {
   position: relative;
-  margin-right: 2%;
-  margin-left: 2%;
-  width: 46%;
+  margin-left: 16px;
+  width: 198px;
+  height: auto;
 }
 
 // 下段：写真
-.store-sp__under--right img {
+.store-sp__under--img img {
+  display: block;
   width: 100%;
   height: 100%;
   border-radius: 12px 0 0 0;
 }
 
 // 下段：写真の背景色
-.store-sp__under--right::after {
+.store-sp__under--img::after {
   content: '';
   position: absolute;
-  right: 12px;
-  bottom: 12px;
+  right: 16px;
+  bottom: 16px;
   width: 100%;
   height: 100%;
   background-color: $cBeige;
-  border-radius: 16px 0 0 0;
+  border-radius: 12px 0 0 0;
   z-index: -1;
 }
 
@@ -184,14 +193,18 @@
   display: none;
 }
 
+// セクション全体
+.menu {
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
+}
+
 // セクションタイトル
 .menu__title {
   position: relative;
-  margin-top: 64px;
+  margin-top: 80px;
   padding-bottom: 24px;
   font-size: 24px;
-  transform: translateY($tfMedium);
-  transition: $tsMedium ease-out;
 }
 
 // セクションタイトルの下線
@@ -199,39 +212,37 @@
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 12px);
   width: 24px;
   height: 1px;
   background-color: $cBrown;
 }
 
+// swiperのコンテナ
 .swiper {
   position: relative;
   z-index: 0;
-  transform: translateY($tfMedium);
-  transition: $tsMedium ease-out;
 }
 
-// カルーセルのコンテナ
+// スライド部分のコンテナ
 .swiper-slide {
   position: relative;
   margin-top: 56px; /* 56 - 24(背景色の分) = 32px */
 }
 
-// スライドの背景色
+// スライド部分の背景色
 .swiper-slide::after {
   content: '';
   position: absolute;
   top: -24px;
-  right: 10%;
+  right: 7%;
   bottom: 0;
-  left: 10%;
+  left: 7%;
   background-color: $cBeige;
   z-index: -2;
 }
 
-// スライドの写真
+// 各スライドの写真
 .swiper-slide__img {
   width: 70%;
 }
@@ -253,19 +264,18 @@
   position: absolute;
   top: -126%;
   left: 53%;
-  width: 100%;
   transform: translateX(-53%);
+  width: 100%;
   font-family: 'Kaushan Script';
   font-size: 56px;
-  opacity: 0.3;
-  z-index: -1;
-  color:  $cPink;
   background: linear-gradient(180deg, $cPink, $cOrange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  opacity: 0.3;
+  z-index: -1;
 }
 
-// ※他メニューにも継承※
+// ※他のメニューにも継承※
 .pudding::before {
   @extend .waffle;
   content: 'pudding';
@@ -275,11 +285,10 @@
   content: 'coffee';
 }
 
-// メニューの説明
+// メニューの説明文
 .swiper-slide__txt {
   height: auto;
   padding-bottom: 56px;
-  font-size: 14px;
   font-weight: normal;
   line-height: 1.5;
 }
@@ -287,14 +296,14 @@
 // スライドの戻るボタン
 .swiper-button-prev {
   top: 35%;
-  margin-left: 13%;
+  margin-left: 8%;
   color: $cWhite;
 }
 
 // スライドの進むボタン
 .swiper-button-next {
   top: 35%;
-  margin-right: 13%;
+  margin-right: 8%;
   color: $cWhite;
 }
 
@@ -302,6 +311,7 @@
 .menu__link {
   position: relative;
   display: flex;
+  height: 100%;
   cursor: pointer;
 }
 
@@ -309,9 +319,10 @@
 .menu__link--txt {
   display: flex;
   position: absolute;
-  top: -44px;
-  right: 15%;
+  top: -40px;
+  right: 14%;
   font-size: 14px;
+  font-weight: normal;
   text-decoration: none;
   color: $cBrown;
   z-index: 1;
@@ -321,10 +332,10 @@
 .menu__link--txt::after {
   content: '';
   position: absolute;
-  top: 12px;
-  right: -14%;
+  top: 14px;
+  right: -16%;
   width: 80px;
-  height: 8px;
+  height: 6px;
   border-bottom: 1px solid $cBrown;
   border-right: 1px solid $cBrown;
   transform: skew(45deg);
@@ -335,7 +346,7 @@
 // セクションタイトル
 .info__title {
   position: relative;
-  margin-top: 64px;
+  margin-top: 80px;
   padding-bottom: 24px;
   font-size: 24px;
   transform: translateY($tfMedium);
@@ -347,8 +358,7 @@
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 12px);
   width: 24px;
   height: 1px;
   background-color: $cBrown;
@@ -368,7 +378,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 48%;
+  width: 50%;
   height: auto;
 }
 
@@ -378,74 +388,75 @@
   display: block;
   content: "";
   top: 0;
+  left: 0;
   bottom: 0;
-  width: 110%;
+  right: 0;
+  width: 100%;
   border-radius: 50% 15% 50% 30%;
-  box-shadow:
-  inset 8px 24px 24px 24px $cCream, inset 0 -16px 12px 16px $cCream;
+  box-shadow: inset 0px 24px 12px 12px #FFEFE0,
+              inset 0px -24px 12px 12px #FFEFE0
 }
 
 // 外観の写真
 .info__img--img {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 110%;
+  width: 100%;
   object-fit: cover;
   border-radius: 50% 15% 50% 30%;
 }
 
-// 営業時間と電話番号をリスト化
+// 右側：営業時間等のコンテナ
 .info__list {
   text-align: left;
-  width: 46%;
+  width: 47%;
   list-style: none;
-  // line-height: 1;
-  margin-left: 6%;
+  margin-left: 3%;
   font-weight: normal;
 }
 
-// リストのヘッダー
+// ヘッダー：営業時間と電話番号
 .info__list--header {
-  display: inline-block;
-  margin-bottom: 3%;
+  margin-bottom: 4px;
+}
+
+// 詳細：営業時間と電話番号
+.info__list--item {
   font-size: 14px;
-  border-bottom: solid 1px $cBrown;
+  line-height: 1.2;
+  margin-left: 6%;
+}
+
+// ラストオーダー
+.info__list--last-order {
+  margin-bottom: 4px;
+  margin-left: 45%;
+  font-size: 14px;
 }
 
 // 「電話番号」上のみに余白
 .info__list--header:nth-of-type(7) {
-  margin-top: 12%;
+  margin-top: 16px;
 }
 
-// 各リスト要素
-.info__list--item {
-  font-size: 14px;
-  line-height: 1.5;
-  margin-left: 6%;
-}
-
+// Safariでの電話番号の青字化を押さえる
 .info__list--item:last-child {
   text-decoration: none;
   color: $cBrown;
 }
 
-.info__list--last-order {
-  margin-bottom: 4%;
-  margin-left: 30%;
-  font-size: 14px;
-}
-
 
 
 // ----------- オレンジの背景 ----------
-
+// 背景色のコンテナ
 .bgc {
   position: relative;
   overflow: hidden;
+  // 画面幅いっぱいにする
+  width: 100vw;
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
 }
 
+// 背景色
 .bgc::before {
   content: '';
   position: absolute;
@@ -468,6 +479,7 @@
 
 
 // ----------- access ----------
+// セクション全体
 .access {
   color: $cWhite;
 }
@@ -475,50 +487,48 @@
 // セクションタイトル
 .access__title {
   position: relative;
-  display: block;
-  margin-top: 88px;
+  margin-top: 80px;
   padding-bottom: 24px;
   font-size: 24px;
   transform: translateY($tfMedium);
   transition: $tsMedium ease-out;
 }
 
-.access__wrapper {
-  transform: translateY($tfMedium);
-  transition: $tsMedium ease-out;
-} 
-
 // セクションタイトルの下線
 .access__title::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 12px);
   width: 24px;
   height: 1px;
   background-color: $cWhite;
 }
 
-// アクセスの本文
+// 本文とマップのコンテナ
+.access__wrapper {
+  transform: translateY($tfMedium);
+  transition: $tsMedium ease-out;
+}
+
+// 本文
 .access__detail {
-  text-align: center;
   margin-top: 32px;
   margin-bottom: 4px;
-  font-size: 16px;
   font-weight: normal;
 }
 
 // Googleマップ
 .access__map {
-  width: 90%;
-  height: 250px;
-  border-radius: 20px;
+  display: inline-block;
+  width: 84%;
+  height: 200px;
 }
 
 
 
 // ----------- photo ----------
+// セクション全体
 .photo {
   position: relative;
   color: $cWhite;
@@ -529,7 +539,7 @@
 .photo__title {
   position: relative;
   display: block;
-  margin-top: 64px;
+  margin-top: 80px;
   padding-bottom: 24px;
   font-size: 24px;
   transform: translateY($tfMedium);
@@ -541,8 +551,7 @@
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 12px);
   width: 24px;
   height: 1px;
   background-color: $cWhite;
@@ -550,6 +559,7 @@
 
 // スライドアニメーション全体のコンテナ
 .photo__wrapper {
+  margin-top: 32px;
   transform: translateY($tfMedium);
   transition: $tsMedium ease-out;
 }
@@ -557,19 +567,14 @@
 // スライドアニメーションのコンテナ上段
 .photo__wrapper--over {
   display: flex;
-  margin-top: 32px;
   overflow: hidden;
-  transform: translateY($tfMedium);
-  transition: $tsMedium ease-out;
+  margin-bottom: 24px;
 }
 
 // スライドアニメーションのコンテナ下段
 .photo__wrapper--under {
   display: flex;
-  margin-top: 24px;
   overflow: hidden;
-  transform: translateY($tfMedium);
-  transition: $tsMedium ease-out;
 }
 
 // モーダルの背景部分
@@ -578,27 +583,24 @@
   width: 100vw;
   height: 100vh;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
   background: rgba(0,0,0,0.9);
   pointer-events: none;
   opacity: 0;
   transition: 0.2s ease-out;
-  z-index: 1;
+  z-index: 2;
 }
 
 // モーダルの画像表示部分
 .photo__modal--img {
   position: absolute;
-  width: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0;
-  visibility: hidden;
+  width: 252px;
+  height: auto;
   transition: 0.2s ease-out;
-  z-index: 1;
+  z-index: 2;
 }
 
 // 各スライド
@@ -612,6 +614,7 @@
 
 
 // ----------- contact ----------
+// セクション全体
 .contact {
   margin-bottom: 32px;
 }
@@ -630,14 +633,15 @@
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 12px);
   width: 24px;
   height: 1px;
   background-color: $cBrown;
 }
 
+// 予約ボタンとフォームのコンテナ
 .contact__wrapper {
+  margin-top: 32px;
   transform: translateY($tfMedium);
   transition: $tsMedium ease-out;
 }
@@ -646,8 +650,7 @@
 .contact__reserve {
   display: inline-block;
   width: 70%;
-  margin-top: 32px;
-  margin-bottom: 32px;
+  margin-bottom: 64px;
   background-color: $cGreen;
   border-radius: 10px;
   font-size: 18px;
@@ -657,35 +660,37 @@
   box-shadow: 1px 1px 3px $cShadow;
 }
 
-// お問い合わせフォームのコンテナ
-.contact__form {
+// 問い合わせのアコーディオン
+.contact__accordion {
   text-align: left;
-  margin-left: 5%;
 }
 
 // タイトル「お問い合わせフォーム」
-.contact__form-header {
+.contact__accordion--header {
   margin-bottom: 8px;
+  margin-left: 5%;
   font-weight: normal;
+  cursor: pointer;
 }
 
-// お問い合せフォームの入力部分
-.contact__form-wrapper {
-  font-weight: normal;
+// フォームのコンテナ
+.contact__form {
   margin-right: auto;
-  transition: 0.4s;
+  margin-left: auto;
+  width: 80%;
+  font-weight: normal;
 }
 
-.contact__form-label {
-  line-height: 2.5;
+// フォームの項目名
+.contact__form--label {
+  display: block;
+  margin-top: 8px;
+  line-height: 1.6;
 }
 
 // フォームの入力部分
-.contact__form-input {
-  display: block;
-  width: 84%;
-  line-height: 1.5;
-  margin-left: 4%;
+.contact__form--input {
+  width: 100%;
   padding-left: 4px;
   background-color: #fff;
   border-radius: 4px;
@@ -698,7 +703,7 @@
   margin-top: 24px;
   margin-right: auto;
   margin-left: auto;
-  width: 40%;
+  width: 30%;
   height: auto;
   line-height: 2.5;
   background-color: $cGreen;

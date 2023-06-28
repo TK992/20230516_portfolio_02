@@ -1,14 +1,21 @@
 // Javascriptで後から動きをつける
 
-// 消えている要素を表示する
+// 要素を消す
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+// 消した要素を表示する
 .show {
   transform: none;
   opacity: 1;
   visibility: visible;
 }
 
+
 // modalのみで使用
-// 消えている要素を表示・クリックイベントを有効にする
+// modalを表示・クリックイベントを有効にする
 .showModal {
   opacity: 1;
   visibility: visible;
@@ -22,3 +29,8 @@
   transform: none; 
 }
 
+// .swiper-slide-active {
+//   transition-duration: 0ms;
+//   opacity: 1;
+//   transform: translate3d(-630px, 0px, 0px);
+// }

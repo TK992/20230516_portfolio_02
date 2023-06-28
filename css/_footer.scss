@@ -1,7 +1,11 @@
-@use "common" as *;
+@use "base" as *;
 
 // ----------- フッター ----------
 .footer {
+  // 画面幅いっぱいにする
+  width: 100vw;
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
   height: auto;
   background-color: $cBrown;
 }
